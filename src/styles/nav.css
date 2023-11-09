@@ -22,3 +22,53 @@
 .navbar a:hover {
     text-decoration: underline;
 }
+
+nav .menu-btn {
+    float: right;
+    cursor: pointer;
+    display: none;
+  }
+  nav .menu-btn i {
+    font-size: 2em;
+    color: white;
+  }
+
+  /* Media Query */
+  @media (max-width: 768px) {
+    nav .menu-btn {
+      display: block;
+    }
+    nav ul {
+      position: fixed;
+    }
+    nav ul.active {
+      left: 0;
+    }
+  }
+
+  /* Hamburger Animation */
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    margin: 5px 0;
+  }
+  .toggle .hamburger {
+    transform: rotate(45deg);
+  }
+  .toggle .hamburger::before {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  .toggle .hamburger::after {
+    transform: rotate(90deg);
+  }

@@ -1,9 +1,9 @@
 #marquee {
     background-image: url('../assets/images/marquee-bg.png');
     background-size: cover;
-    background-position: center;
+    background-position: center bottom;
     background-repeat: no-repeat;
-    min-height: 600px;
+    min-height: 800px;
     display: flex;
     justify-content: center;
 }
