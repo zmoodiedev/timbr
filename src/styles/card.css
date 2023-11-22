@@ -14,20 +14,26 @@
     padding: 15px;
 }
 
-.card-title {
+.card .name {
     display: block;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.card-rating {
+.card .location {
+    display: block;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.card .rating {
     display: block;
     font-size: 0.9em;
     line-height: 1.6;
 }
 
-.card-price {
+.card .price {
     display: block;
     font-size: 0.9em;
     line-height: 1.6;

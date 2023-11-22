@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../styles/marquee.css';
 
-const Marquee = () => {
+function Marquee() {
     return (
         <div id="marquee">
            

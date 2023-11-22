@@ -7,6 +7,8 @@ function CardGrid() {
     return (
         <div id="cardGrid">
             <Card />
+            <Card />
+            <Card />
         </div>
     );
 };

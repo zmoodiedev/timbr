@@ -3,7 +3,7 @@ import Navigation from './nav';
 
 import '../styles/header.css';
 
-const Header = () => {
+function Header() {
     return (
         <header>
             <Navigation />
