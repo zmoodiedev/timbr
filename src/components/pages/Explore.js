@@ -1,8 +1,15 @@
 import React from 'react';
+import AmenityList from '../AmenityList';
+import amenities from '../amenities';
 
-
-export default function Explore() {
+const Explore = () => {
     return (
-        <h1>Explore</h1>
+        <div>
+            <h1>Explore</h1>
+            <AmenityList amenities={amenities} />
+        </div>
     )
 }
+
+
+export default Explore;
