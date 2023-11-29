@@ -5,10 +5,11 @@ import '../styles/cardgrid.css';
 
 function CardGrid() {
     return (
-        <div id="cardGrid">
+        <div id="cardGrid" className="container">
             <Card />
             <Card />
             <Card />
+            
         </div>
     );
 };

@@ -4,37 +4,56 @@
     padding: 15px;
 }
 
-.card img {
+.card a {
+    text-decoration: none;
+    color: var(--charcoal);
+}
+
+.card img.card-feature {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    min-height: 180px;
+    border-radius: 6px;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card-content {
-    padding: 15px;
+    padding: 8px 0;
+    position: relative;
 }
 
 .card .name {
     display: block;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 1em;
+    font-weight: 700;
 }
 
-.card .location {
+.card .distance {
     display: block;
-    font-size: 1em;
-    line-height: 1.6;
+    font-size: .9em;
 }
 
 .card .rating {
-    display: block;
     font-size: 0.9em;
-    line-height: 1.6;
+    font-weight: 600;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.card .rating .star {
+    width: 14px;
+    height: 14px;
+}
+
+.card .rating .star path {
+    fill: var(--beige);
 }
 
 .card .price {
     display: block;
-    font-size: 0.9em;
+    font-size: 1em;
+    font-weight: 700;
     line-height: 1.6;
 }

@@ -1,8 +1,5 @@
 header {
-    height: 80px;
+    height: var(--header-height);
     width: 100%;
-    border-top: 1px solid #cfcfcf;
-    border-bottom: 1px solid #cfcfcf;
     display: flex;
-    
 }

@@ -4,6 +4,48 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     min-height: 800px;
+    text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-top: calc(var(--header-height) * -1);
+    z-index: -1;
+}
+
+#marquee::before {
+    content:"";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(41,50,7);
+    background: linear-gradient(180deg, var(--charcoal) 0%, rgba(120,127,93,0.50) 25%);
+}
+
+#mainTag {
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 1);
+    z-index: 1;
+}
+
+#secondaryTag {
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    position: relative;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 1);
+    z-index: 1;
+}
+
+#campSearch {
+    position: relative;
+    z-index: 1;
 }

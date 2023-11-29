@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/nav.css'
+import '../styles/nav.css';
 
 
 export default function App() {
     return (
-        <nav className="navbar">
+        <nav className="navbar container">
             <div className="logo">
-                <a href="index.html">Timbr</a>
+                <a href="/">Timbr</a>
             </div>
             <ul>
                 <li><Link to="/">Home</Link></li>
@@ -16,7 +16,7 @@ export default function App() {
                 <li><Link to="/contact">Contact</Link></li>
             </ul>
             <div className="auth">
-                <a href="signup">Sign Up</a> | <a href="login.html">Log In</a>
+                <a href="signup">Sign Up</a> | <a href="/user">Log In</a>
             </div>
         </nav>
 

@@ -1,5 +1,5 @@
 import ElectricIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
-import FirepitIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
+import FirepitIcon  from '../assets/images/_icons/amenities/firepit_icon.svg';
 import FirewoodIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import FishingIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import GlampingIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
@@ -11,7 +11,7 @@ import SewerIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import ShowerIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import SwimmingIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import TentIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
-import ToiletIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
+import ToiletIcon  from '../assets/images/_icons/amenities/toilet_icon.svg';
 import TrailerIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import TrailIcon  from '../assets/images/_icons/amenities/swim_icon.svg';
 import WaterIcon  from '../assets/images/_icons/amenities/swim_icon.svg';

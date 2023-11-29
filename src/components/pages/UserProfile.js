@@ -1,5 +1,5 @@
 import React from 'react';
-// Import your CSS styles as needed
+
 
 const UserProfilePage = () => {
   // Dummy data to simulate props
@@ -15,7 +15,8 @@ const UserProfilePage = () => {
   };
 
   return (
-    <div className="user-profile-page">
+    <div className='container user-profile-page'>
+    <h1>Zach Moodie</h1>
       <ProfileHeader 
         name={userData.name}
         location={userData.location}

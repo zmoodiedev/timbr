@@ -1,12 +1,14 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import './App.css';
+import './index.css';
+import './styles/variables.css';
 import Header from './components/header';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Explore from './components/pages/Explore';
 import Contact from './components/pages/Contact';
 import UserProfilePage from './components/pages/UserProfile';
+import Campground from './components/pages/Campground';
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/user/:id" element={<UserProfilePage />} />
+        <Route path="/user" element={<UserProfilePage />} />
+        <Route path="/campground" element={<Campground />} />
       </Routes>
     </div>
   );

@@ -4,7 +4,7 @@ import amenities from '../amenities';
 
 const Explore = () => {
     return (
-        <div>
+        <div className='container-fw'>
             <h1>Explore</h1>
             <AmenityList amenities={amenities} />
         </div>

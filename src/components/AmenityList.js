@@ -1,5 +1,6 @@
 import React from 'react';
 import AmenityItem from './AmenityItem';
+import '../styles/amenities.css';
 
 const AmenityList = ({ amenities }) => {
 

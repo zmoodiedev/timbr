@@ -1,0 +1,13 @@
+:root {
+    --main-font: 'Open Sans', sans-serif;
+    --secondary-font: 'Merriweather', serif;
+    --charcoal: #36454F;
+    --dark-green: #293207;
+    --medium-green: #787f5d;
+    --light-green: #d3d9bf;
+    --beige: #c8c2ac;
+    --medium-gray: #b2b7bd;
+    --light-gray: #e0e1dc;
+    --side-padding: 80px;
+    --header-height: 80px;
+}

@@ -3,7 +3,7 @@ import Marquee from '../marquee';
 import CardGrid from '../cardGrid';
 
 
-export default function Home() {
+const Home = () => {
     return (
         <div>
             <Marquee />
@@ -11,3 +11,5 @@ export default function Home() {
         </div>
     )
 }
+
+export default Home;
