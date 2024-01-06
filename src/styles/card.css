@@ -1,7 +1,7 @@
 .card {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 15px;
+    border: 1px solid var(--light-gray)
 }
 
 .card a {
@@ -12,14 +12,14 @@
 .card img.card-feature {
     width: 100%;
     min-height: 180px;
-    border-radius: 6px;
+    border-radius: 6px 6px 0 0;
     max-height: 200px;
     object-fit: cover;
     object-position: center;
 }
 
 .card-content {
-    padding: 8px 0;
+    padding: 8px 12px 12px 12px;
     position: relative;
 }
 
@@ -38,8 +38,8 @@
     font-size: 0.9em;
     font-weight: 600;
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 8px;
+    right: 10px;
 }
 
 .card .rating .star {
@@ -48,7 +48,7 @@
 }
 
 .card .rating .star path {
-    fill: var(--beige);
+    fill: var(--medium-green);
 }
 
 .card .price {

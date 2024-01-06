@@ -1,29 +1,90 @@
+.cg-header {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8em 0;
+}
+
+.cg-interact {
+    display: inline-flex;
+    gap: 1.2em;
+   align-items: center;
+}
+
+.cg-interact a.share {
+    font-size: 1.2em;
+    color: var(--charcoal);
+}
+
+.cg-interact a.favorite {
+    font-size: 1.2em;
+    color: var(--pink);
+    transition: all .2s ease-in-out;
+}
+
+.cg-interact a.favorite:hover {
+    margin-bottom: 6px;
+}
+
 .camp-photos {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 12px;
     grid-row-gap: 12px;
+    margin-bottom: 1.6em;
+}
+
+.camp-photos img {
+    width: 100%;
 }
     
-    .featured-photo {
-        grid-area: 1 / 1 / 3 / 4;
-        background-color: var(--charcoal);
-    }
-    .photo-1 {
-        grid-area: 1 / 4 / 2 / 5;
-        background-color: var(--light-green);
-    }
-    .photo-2 {
-        grid-area: 1 / 5 / 2 / 6;
-        background-color: var(--light-green);
-    }
-    .photo-3 {
-        grid-area: 2 / 4 / 3 / 5;
-        background-color: var(--light-green);
-    }
-    .photo-4 {
-        grid-area: 2 / 5 / 3 / 6;
-        background-color: var(--light-green);
-    }
-    
+.featured-photo {
+    grid-area: 1 / 1 / 3 / 3;
+    border-radius: 10px;
+    background-color: var(--light-green);
+}
+.photo-1 {
+    grid-area: 1 / 3 / 2 / 4;
+    background-color: var(--light-green);
+}
+.photo-2 {
+    grid-area: 1 / 4 / 2 / 5;
+    background-color: var(--light-green);
+}
+.photo-3 {
+    grid-area: 2 / 3 / 3 / 4;
+    background-color: var(--light-green);
+}
+.photo-4 {
+    grid-area: 2 / 4 / 3 / 5;
+    background-color: var(--light-green);
+}
+
+.cg-details {
+     display: flex;
+     gap: 3em;
+     padding-bottom: 3em; 
+}
+
+.cg-details-l {
+    width: 70%;
+}
+
+.cg-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cg-amenities {
+    flex: 1;
+}
+
+.cg-activities {
+    flex: 1;
+}
+
+.cg-details-r {
+    width: 30%;
+}

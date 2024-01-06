@@ -7,13 +7,12 @@ export default function App() {
     return (
         <nav className="navbar container">
             <div className="logo">
-                <a href="/">Timbr</a>
+                <a href="/">tmbr</a>
             </div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
+            <ul className="main-nav">
                 <li><Link to="/explore">Explore</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/">Camping Tips</Link></li>
+                <li><Link to="/contact">Submit a Campground</Link></li>
             </ul>
             <div className="auth">
                 <a href="signup">Sign Up</a> | <a href="/user">Log In</a>

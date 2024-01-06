@@ -22,7 +22,7 @@
     height: 100%;
     width: 100%;
     background: rgb(41,50,7);
-    background: linear-gradient(180deg, var(--charcoal) 0%, rgba(120,127,93,0.50) 25%);
+    background: linear-gradient(180deg, var(--charcoal) 0%, rgba(0,0,0,0.30) 25%);
 }
 
 #mainTag {

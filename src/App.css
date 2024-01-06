@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--charcoal);
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: var(--secondary-font);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--charcoal);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--charcoal);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h3 {
+  font-family: var(--primary-font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--medium-green);
 }
 
-.App-link {
-  color: #61dafb;
+h4 {
+  font-family: var(--secondary-font);
+  font-size: .9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  line-height: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+hr {
+  border-top: 1px solid var(--light-gray);
+  border-bottom: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-padding); 
+  padding-right: var(--side-padding); 
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-padding); 
+  padding-right: var(--side-padding); 
+}
+
+.container-sm {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-padding); 
+  padding-right: var(--side-padding); 
+}
+
+.container-fw {
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 }

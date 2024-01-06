@@ -1,7 +1,10 @@
+.card-grid-wrap {
+    padding: 3.3em 0;
+}
+
 #cardGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    gap: 1.6em;
+    margin-bottom: 2em;
 }

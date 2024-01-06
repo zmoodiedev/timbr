@@ -1,13 +1,18 @@
 import React from 'react';
 import Marquee from '../marquee';
 import CardGrid from '../cardGrid';
+import Suggestions from '../suggestions';
 
 
 const Home = () => {
     return (
         <div>
             <Marquee />
-            <CardGrid />
+            <div className="container">
+                <CardGrid />
+                <hr />
+                <Suggestions />
+            </div>
         </div>
     )
 }

@@ -2,4 +2,9 @@ header {
     height: var(--header-height);
     width: 100%;
     display: flex;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+header.header-home {
+    border: none;
 }

@@ -1,15 +1,23 @@
 import React from 'react';
 import Card from './card';
+import Button from './button';
 
 import '../styles/cardgrid.css';
 
 function CardGrid() {
     return (
-        <div id="cardGrid" className="container">
-            <Card />
-            <Card />
-            <Card />
-            
+        <div className="container card-grid-wrap">
+            <div id="cardGrid">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+
+            <Button>
+                Browse more campgrounds
+            </Button>
         </div>
     );
 };

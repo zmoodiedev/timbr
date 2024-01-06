@@ -4,26 +4,50 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px var(--side-padding);
-    color: #fff;
 }
+
+.navbar .logo a {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.navbar .logo a:hover {
+  text-decoration: none;
+}
+
 .navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
+
 .navbar li {
+    font-size: .8rem;
     padding: 0 25px;
+    font-weight: 500;
 }
 .navbar a {
-    font-size: .9rem;
-    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
-    font-weight: 600
+    color: var(--charcoal);
 }
+
+.header-home {
+  color: #fff;
+}
+
+.header-home a {
+  color: #fff;
+}
+
 .navbar a:hover {
     text-decoration: underline;
+}
+
+.navbar .auth {
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 nav .menu-btn {

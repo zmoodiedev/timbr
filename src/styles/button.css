@@ -1,0 +1,15 @@
+button {
+    font-family: var(--main-font);
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    background-color: var(--pink);
+    transition: all .3s ease-in-out;
+}
+
+button:hover {
+    opacity: .7;
+    cursor: pointer;
+}
