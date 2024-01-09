@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/button.css';
 
 const Button = ({ children }) => {
+  const buttonRef = useRef(null);
+
   return (
-    <button>
+    <button ref={buttonRef} className="gradient-button">
       {children}
     </button>
   );

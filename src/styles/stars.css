@@ -1,0 +1,13 @@
+.stars {
+    display: flex;
+    gap: .13em;
+}
+
+.stars svg {
+    width: 15px;
+}
+
+.stars svg path{
+    width: 15px;
+    fill: var(--medium-green);
+}

@@ -1,0 +1,27 @@
+#campSearch {
+    min-width: 25%; 
+}
+
+#search {
+    background-color: #fff;
+    border-radius: 50px;
+    margin: 1.4em 0;
+    display: flex;
+}
+
+#search input {
+    flex: 1 1;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    padding: .8em 1.5em;
+    font-family: var(--main-font);
+    font-size: .9em;
+}
+
+.search-btn {
+    background-color: var(--pink);
+    color: #fff;
+    border-radius: 0 50px 50px 0;
+    font-weight: 600;
+    box-shadow: none;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './card';
-import Button from './button';
 
 import '../styles/cardgrid.css';
 
@@ -14,10 +13,6 @@ function CardGrid() {
                 <Card />
                 <Card />
             </div>
-
-            <Button>
-                Browse more campgrounds
-            </Button>
         </div>
     );
 };

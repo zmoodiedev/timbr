@@ -1,0 +1,11 @@
+#amenityFilter {
+    position: relative;
+}
+
+.amenity-list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: .6rem;
+    background-color: #fff;
+    border-radius: 10px;
+}

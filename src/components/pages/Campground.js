@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShareNodes, faHeart } from '@fortawesome/free-solid-svg-icons'
 import Button from "../button";
+import ReviewGrid from "../reviewGrid";
 import '../../styles/campground.css';
 
 const Campground = () => {
@@ -42,6 +43,7 @@ const Campground = () => {
 
                     <div className="reviews">
                         <h3>Reviews</h3>
+                        <ReviewGrid />
                         <Button>Read all reviews</Button>
                     </div>
                 </div>

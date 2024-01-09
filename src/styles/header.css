@@ -3,6 +3,8 @@ header {
     width: 100%;
     display: flex;
     border-bottom: 1px solid var(--light-gray);
+    position: relative;
+    z-index: 1;
 }
 
 header.header-home {

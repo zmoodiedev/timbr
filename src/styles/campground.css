@@ -21,10 +21,24 @@
     font-size: 1.2em;
     color: var(--pink);
     transition: all .2s ease-in-out;
+    animation: pulse 1s 10;
+
 }
 
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); /* Adjust the scale factor for a bigger/smaller pulse */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .cg-interact a.favorite:hover {
-    margin-bottom: 6px;
+    scale: 1.4;
 }
 
 .camp-photos {
@@ -65,7 +79,7 @@
 .cg-details {
      display: flex;
      gap: 3em;
-     padding-bottom: 3em; 
+     padding-bottom: 5rem; 
 }
 
 .cg-details-l {
