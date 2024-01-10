@@ -1,0 +1,16 @@
+#homeCards {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+#homeCards div {
+    flex: 1;
+}
+
+#AdSpace {
+    padding: 3rem;
+    font-size: 1.3rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}

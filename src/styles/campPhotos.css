@@ -1,0 +1,34 @@
+#campPhotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    margin-bottom: 1.6em;
+}
+
+#campPhotos img {
+    width: 100%;
+}
+    
+.featured-photo {
+    grid-area: 1 / 1 / 3 / 3;
+    border-radius: 10px;
+    background-color: var(--light-green);
+}
+.photo-1 {
+    grid-area: 1 / 3 / 2 / 4;
+    background-color: var(--light-green);
+}
+.photo-2 {
+    grid-area: 1 / 4 / 2 / 5;
+    background-color: var(--light-green);
+}
+.photo-3 {
+    grid-area: 2 / 3 / 3 / 4;
+    background-color: var(--light-green);
+}
+.photo-4 {
+    grid-area: 2 / 4 / 3 / 5;
+    background-color: var(--light-green);
+}

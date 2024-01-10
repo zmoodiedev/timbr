@@ -1,0 +1,54 @@
+#userCard {
+    box-shadow: var(--tmbr-shadow);
+    padding: 2em;
+    text-align: center;
+    border-radius: 8px;
+    flex: 1 1 10%;
+    height: fit-content;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+#userHeader,
+#userInteraction{
+    margin-bottom: .9em;
+}
+
+.user-image {
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-image img {
+    width: 100%;
+    height: auto;
+}
+
+h4.user-name {
+    color: var(--charcoal);
+    font-size: 1.5em;
+    margin: .4em 0 .2em;
+}
+
+.user-joined,
+.user-verified {
+    display: block;
+}
+
+.user-joined {
+    font-size: .8em;
+}
+
+.user-verified {
+    font-size: .9em;
+    font-weight: 600;
+    color: var(--pink);
+}

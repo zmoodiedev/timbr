@@ -1,13 +1,13 @@
 import React from "react";
 import Navigation from './nav';
 
-import '../styles/header.css';
+import '../../styles/header.css';
 
-function HeaderHome() {
+function Header() {
     return (
-        <header className="header-home">
+        <header>
             <Navigation />
         </header>
     );
 };
-export default HeaderHome;
+export default Header;

@@ -2,15 +2,15 @@ import React from 'react';
 import { Routes, Route, Outlet } from "react-router-dom";
 import './index.css';
 import './styles/variables.css';
-import Header from './components/header';
-import HeaderHome from './components/HeaderHome';
+import Header from './components/layout/header';
+import HeaderHome from './components/layout/headerHome';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Explore from './components/pages/Explore';
 import Contact from './components/pages/Contact';
-import UserProfilePage from './components/pages/UserProfile';
+import UserProfile from './components/pages/UserProfile';
 import Campground from './components/pages/Campground';
-import Footer from './components/footer';
+import Footer from './components/layout/footer';
 
 function HomeLayout() {
   return (
@@ -43,7 +43,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/user" element={<UserProfilePage />} />
+            <Route path="/user" element={<UserProfile />} />
             <Route path="/campground" element={<Campground />} />
           </Route>
         </Routes>

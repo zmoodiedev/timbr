@@ -1,5 +1,16 @@
+.cg-amenities {
+    flex: 1;
+}
 
+.cg-available-amenities{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em .8em;
+    align-items: center;
+}
 
-.amenity {
-    width: 100px;
+.cg-available-amenities .amenity-icon {
+   width: 4em;
+    flex: 1 1 2em;
+    flex-grow: unset;
 }

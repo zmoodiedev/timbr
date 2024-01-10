@@ -2,6 +2,7 @@ import React from 'react';
 import AmenityList from './AmenityList';
 import amenities from './amenities';
 import CardGrid from './cardGrid';
+import Button from './common/button';
 
 import '../styles/amenityFilter.css';
 
@@ -11,6 +12,7 @@ function AmenityFilter() {
         <div id="amenityFilter">
             <AmenityList amenities={amenities} />
             <CardGrid />
+            <Button>Browse more campgrounds</Button>
         </div>
     );
 };
