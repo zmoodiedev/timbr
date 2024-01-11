@@ -12,7 +12,7 @@ function Review() {
                 <div className="user-details">
                     <span className="user-name">Connor</span>
                     <span className="user-location">Banff, Canada</span>
-                    <div className="user-review"><Stars /><span class="timestamp"> • 3 days ago</span></div>
+                    <div className="user-review"><Stars /><span className="timestamp"> • 3 days ago</span></div>
                 </div>
            </div>
            <div className="review-body">

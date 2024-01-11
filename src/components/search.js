@@ -8,7 +8,7 @@ function Search() {
         <div id='campSearch'>
                 <form id="search">
                     <input type="search" id="query" name="q" placeholder="Search..." />
-                    <button class="search-btn"><FontAwesomeIcon icon={faSearch} /></button>
+                    <button className="search-btn"><FontAwesomeIcon icon={faSearch} /></button>
                 </form>
         </div>
     );

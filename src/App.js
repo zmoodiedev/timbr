@@ -5,6 +5,8 @@ import './styles/variables.css';
 import Header from './components/layout/header';
 import HeaderHome from './components/layout/headerHome';
 import Home from './components/pages/Home';
+import SignUp from './components/pages/SignUp';
+import Login from './components/pages/Login';
 import About from './components/pages/About';
 import Explore from './components/pages/Explore';
 import Contact from './components/pages/Contact';
@@ -40,6 +42,8 @@ function App() {
             <Route index element={<Home />}/>
           </Route>
           <Route path="/" element={<MainLayout />}>
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/contact" element={<Contact />} />

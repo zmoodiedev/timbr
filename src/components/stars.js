@@ -5,7 +5,7 @@ import '../styles/stars.css';
 
 function Stars() {
     return (
-        <div class="stars">
+        <div className="stars">
             <Star />
             <Star />
             <Star />
