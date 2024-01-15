@@ -10,7 +10,8 @@
     background-color: #fff;
     border-radius: 8px;
     flex-wrap: wrap;
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     position: absolute;
     top: -1.5em;
     justify-content: space-around;

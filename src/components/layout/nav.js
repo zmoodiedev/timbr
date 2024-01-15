@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/nav.css';
 
 
-export default function App() {
+function App() {
     return (
         <nav className="navbar container">
             <div className="logo">
@@ -21,3 +21,6 @@ export default function App() {
 
     );
 };
+
+
+export default App;

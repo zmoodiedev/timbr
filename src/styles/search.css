@@ -1,6 +1,8 @@
 #campSearch {
-    min-width: 25%; 
-}
+    min-width: 300px;
+    max-width: 600px;
+    width: 80%;
+  }
 
 #search {
     background-color: #fff;

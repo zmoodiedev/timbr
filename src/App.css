@@ -1,4 +1,5 @@
 body {
+  height: 100vh;
   margin: 0;
   font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
@@ -82,4 +83,14 @@ hr {
 .container-fw {
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
+}
+
+input {
+  width: 100%;
+  border-radius: 50px;
+  padding: .5rem;
+}
+
+.input-container {
+  padding: .5rem 0;
 }
