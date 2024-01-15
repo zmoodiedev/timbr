@@ -1,0 +1,36 @@
+.authentication {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5rem;
+}
+
+.auth__left {
+    flex: 0.5;
+    text-align: center;
+}
+
+.auth__left > img {
+    max-width: 400px;
+    margin-top: 4rem;
+}
+
+.auth__right {
+    flex: .5;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.auth__more {
+    border: 1px solid var(--charcoal);
+    padding: 1.3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.auth__more span {
+    font-weight: 500;
+    font-size: .7rem;
+}
