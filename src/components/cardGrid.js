@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
+import { Link } from 'react-router-dom';
 import CampCard from './common/campCard';
 
 import '../styles/cardgrid.css';
@@ -31,9 +32,10 @@ function CardGrid() {
     return (
         <div className="container card-grid-wrap">
             <div id="cardGrid">
-
             {campgroundData.map((campground) => (
-                <CampCard id={campground.id} name={campground.name} price={campground.price} />
+                <Link to={`/campground/${campground.id}`}>
+                    <CampCard id={campground.id} name={campground.name} price={campground.price} />
+                </Link>
             ))}
 
                 

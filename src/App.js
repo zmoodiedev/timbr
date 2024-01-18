@@ -79,7 +79,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/contact" element={<Contact />} />
             <Route path='/user/' element={user ? <UserProfile /> : <Authentication />} />
-            <Route path="/campground/:key" element={<Campground />} />
+            <Route path="/campground/:campgroundId" element={<Campground />} />
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
             <Route path="/signup" element={<Authentication />} />
