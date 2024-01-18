@@ -1,9 +1,25 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loginUser } from '../../features/userSlice';
+import { getAuth, signOut } from "firebase/auth";
 import '../../styles/nav.css';
 
 
-function App() {
+function Navigation() {
+
+    const user = useSelector((state) => state.data.user.user);
+    const dispatch = useDispatch();
+
+    const auth = getAuth();
+
+    
+    const handleLogout = () => {
+        dispatch(loginUser());
+        signOut(auth);
+    }
+    
+
     return (
         <nav className="navbar container">
             <div className="logo">
@@ -15,7 +31,12 @@ function App() {
                 <li><Link to="/contact">Submit a Campground</Link></li>
             </ul>
             <div className="auth">
-                <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
+                {user ?
+                    <><Link to={'/user'} className="username">{user.username}</Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
+                    <>
+                        <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
+                    </>
+                }
             </div>
         </nav>
 
@@ -23,4 +44,4 @@ function App() {
 };
 
 
-export default App;
+export default Navigation;

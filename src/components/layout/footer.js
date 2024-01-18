@@ -1,6 +1,7 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faFacebook, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 import '../../styles/footer.css';
 
 function Footer() {
@@ -32,9 +33,9 @@ function Footer() {
                 <div className="terms">©2024 Timbr, Inc.  •  Privacy  •  Terms  •  Sitemap</div>
                 <div className="social">
                     <ul> 
-                        <li><a href="#" target="_blank" title="Instagram"><FontAwesomeIcon icon={faInstagram} /></a></li>
-                        <li><a href="#" target="_blank" title="X/Twitter"><FontAwesomeIcon icon={faXTwitter} /></a></li>
-                        <li><a href="#" target="_blank" title="Facebook"><FontAwesomeIcon icon={faFacebook} /></a></li>
+                        <li><Link><FontAwesomeIcon icon={faInstagram} /></Link></li>
+                        <li><Link><FontAwesomeIcon icon={faXTwitter} /></Link></li>
+                        <li><Link><FontAwesomeIcon icon={faFacebook} /></Link></li>
                     </ul>
                 </div>
             </div>

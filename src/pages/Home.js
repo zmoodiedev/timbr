@@ -1,15 +1,15 @@
 import React from 'react';
-import Marquee from '../marquee';
-import AmenityFilter from '../amenityFilter';
-import Suggestions from '../suggestions';
-import HomeCards from '../layout/homeCards';
+import Marquee from '../components/marquee';
+import AmenityFilter from '../components/amenityFilter';
+import Suggestions from '../components/suggestions';
+import HomeCards from '../components/layout/homeCards';
 
-import '../../styles/home.css';
+import '../styles/home.css';
 
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Marquee />
             <div className="container home-body">
                 <AmenityFilter />
@@ -17,7 +17,7 @@ const Home = () => {
                 <Suggestions />
                 <HomeCards />
             </div>
-        </div>
+        </>
     )
 }
 

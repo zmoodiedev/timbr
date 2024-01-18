@@ -1,19 +1,20 @@
-import React from 'react';
+import {React, useEffect } from 'react';
 import { Routes, Route, Outlet } from "react-router-dom";
-import './index.css';
-import './styles/variables.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser, setLoading } from './features/userSlice';
+import { auth } from './firebaseConfig';
 import Header from './components/layout/header';
 import HeaderHome from './components/layout/headerHome';
-import Home from './components/pages/Home';
-//import SignUp from './authentication/SignUp';
-//import Login from './authentication/Login';
+import Home from './pages/Home';
 import Authentication from './authentication/Authentication';
-import About from './components/pages/About';
-import Explore from './components/pages/Explore';
-import Contact from './components/pages/Contact';
-import UserProfile from './components/pages/UserProfile';
-import Campground from './components/pages/Campground';
+import About from './pages/About';
+import Explore from './pages/Explore';
+import Contact from './pages/Contact';
+import UserProfile from './pages/UserProfile';
+import Campground from './pages/Campground';
 import Footer from './components/layout/footer';
+import './index.css';
+import './styles/variables.css';
 
 function HomeLayout() {
   return (
@@ -23,7 +24,7 @@ function HomeLayout() {
       <Footer />
     </>
   )
-}
+};
 
 function MainLayout() {
   return (
@@ -33,7 +34,7 @@ function MainLayout() {
       <Footer />
     </>
   )
-}
+};
 
 function HeadlessLayout() {
   return (
@@ -41,9 +42,32 @@ function HeadlessLayout() {
       <Outlet />
     </>
   )
-}
+};
 
 function App() {
+
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch(
+          loginUser({
+            uid: authUser.uid,
+            username: authUser.displayName,
+            email: authUser.email,
+          })
+        );
+        dispatch(setLoading(false));
+      } else {
+        console.log('User is not logged in');
+      }
+    });
+  }, [dispatch]);
+
+
+  const user = useSelector((state) => state.data.user.user);
+
   return (
     <div className="App">
         <Routes>
@@ -54,8 +78,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/user" element={<UserProfile />} />
-            <Route path="/campground" element={<Campground />} />
+            <Route path='/user/' element={user ? <UserProfile /> : <Authentication />} />
+            <Route path="/campground/:key" element={<Campground />} />
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
             <Route path="/signup" element={<Authentication />} />

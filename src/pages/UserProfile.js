@@ -1,11 +1,12 @@
 import React from 'react';
-import UserCard from '../layout/userCard';
-import CardGrid from '../cardGrid';
-import ReviewGrid from '../reviewGrid';
+import UserCard from '../components/layout/userCard';
+import CardGrid from '../components/cardGrid';
+import ReviewGrid from '../components/reviewGrid';
 
-import '../../styles/userProfile.css';
+import '../styles/userProfile.css';
 
 const UserProfile = () => {
+  
   return (
     <div id='userProfile' className='container'>
       <UserCard />
