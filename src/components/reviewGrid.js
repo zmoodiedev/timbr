@@ -6,6 +6,7 @@ import '../styles/reviewgrid.css';
 function ReviewGrid() {
     return (
         <div className="review-grid-wrap">
+            <h2>Reviews</h2>
             <div id="reviewGrid">
                 <Review />
                 <Review />

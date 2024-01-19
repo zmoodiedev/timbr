@@ -1,15 +1,34 @@
-import React from 'react';
-import { getAuth } from "firebase/auth";
+import React, { useEffect, useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import ActivityList from "../activityList";
 import activities from "../activities";
 import '../../styles/userCard.css';
 
 
-    const auth = getAuth();
-    const user = auth.currentUser;
-
 
 function UserCard() {
+    
+    const [user, setUser] = useState(null);
+    const auth = getAuth();
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+                // User is signed in.
+                setUser(currentUser);
+            } else {
+                // No user is signed in.
+                setUser(null);
+            }
+        });
+
+        // Cleanup subscription on unmount
+        return () => unsubscribe();
+    }, [auth]);
+
+    if (!user) {
+        return <div>Loading user profile...</div>;
+    }
 
     return (
         <div id='userCard'>

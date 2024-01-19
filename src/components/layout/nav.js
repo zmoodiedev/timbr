@@ -28,11 +28,16 @@ function Navigation() {
             <ul className="main-nav">
                 <li><Link to="/explore">Explore</Link></li>
                 <li><Link to="/">Camping Tips</Link></li>
-                <li><Link to="/contact">Submit a Campground</Link></li>
+                <li>
+                    {user ?
+                        <Link to="/submit-campground">Submit a Campground</Link> :
+                        <></>
+                    }
+                </li>
             </ul>
             <div className="auth">
                 {user ?
-                    <><Link to={'/user'} className="username">{user.username}</Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
+                    <><Link to={`/user/${user.username}`} className="username">{user.username}</Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
                     <>
                         <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
                     </>

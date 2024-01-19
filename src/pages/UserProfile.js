@@ -8,7 +8,7 @@ import '../styles/userProfile.css';
 const UserProfile = () => {
   
   return (
-    <div id='userProfile' className='container'>
+    <div id='userProfile' className='page-container'>
       <UserCard />
       <div id="userInfo">
         <h1>Member Profile</h1>

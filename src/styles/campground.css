@@ -6,23 +6,22 @@
     padding: .8em 0;
 }
 
-.cg-interact {
+.cg-interactions {
     display: inline-flex;
     gap: 1.2em;
    align-items: center;
 }
 
-.cg-interact a.share {
+.cg-interactions a.share {
     font-size: 1.2em;
     color: var(--charcoal);
 }
 
-.cg-interact a.favorite {
+.cg-interactions a.favorite {
     font-size: 1.2em;
     color: var(--pink);
     transition: all .2s ease-in-out;
     animation: pulse 1s 10;
-
 }
 
 @keyframes pulse {
@@ -58,7 +57,14 @@
     margin-bottom: 3em;
 }
 
+.cg-amenities,
 .cg-activities {
+    flex: 50%;
+    display: flex;
+}
+
+.cg-amenities .amenity-icon,
+.cg-activities .amenity-icon {
     flex: 1;
 }
 

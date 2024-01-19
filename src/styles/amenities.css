@@ -2,6 +2,10 @@
     flex: 1;
 }
 
+.cg-amenities .amenity-list {
+
+}
+
 .cg-available-amenities{
     display: flex;
     flex-wrap: wrap;

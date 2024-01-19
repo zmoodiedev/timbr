@@ -1,4 +1,11 @@
 button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: .5em;
+}
+
+button.btn {
     font-family: var(--main-font);
     font-weight: 500;
     font-size: .8em;
@@ -12,12 +19,11 @@ button {
     border-radius: 50px;
     color: var(--pink);
     background: transparent;
-    cursor: pointer;
     box-shadow:  4px 4px 9px #bebebe,
     -4px -4px 9px #ffffff;
     }
     
-    button:before {
+    button.btn:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -27,22 +33,22 @@ button {
     border-radius: 50%;
     }
     
-    button:hover {
+    button.btn:hover {
     color: #fff;
     }
     
-    button:before {
+    button.btn:before {
     top: 100%;
     left: 100%;
     transition: all .7s;
     }
     
-    button:hover:before {
+    button.btn:hover:before {
     top: -30px;
     left: -30px;
     }
     
-    button:active:before {
+    button.btn:active:before {
     background: var(--pink);
     transition: background 0s;
     }

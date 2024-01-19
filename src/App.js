@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Authentication from './authentication/Authentication';
 import About from './pages/About';
 import Explore from './pages/Explore';
-import Contact from './pages/Contact';
+import SubmitCampground from './pages/admin/SubmitCampground';
 import UserProfile from './pages/UserProfile';
 import Campground from './pages/Campground';
 import Footer from './components/layout/footer';
@@ -77,8 +77,8 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route path="/about" element={<About />} />
             <Route path="/explore" element={<Explore />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path='/user/' element={user ? <UserProfile /> : <Authentication />} />
+            <Route path="/submit-campground" element={<SubmitCampground />} />
+            <Route path='/user/:username' element={user ? <UserProfile /> : <Authentication />} />
             <Route path="/campground/:campgroundId" element={<Campground />} />
           </Route>
           <Route path="/" element={<HeadlessLayout />}>

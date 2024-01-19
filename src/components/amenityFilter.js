@@ -12,7 +12,7 @@ function AmenityFilter() {
         <div id="amenityFilter">
             <AmenityList amenities={amenities} />
             <CardGrid />
-            <Button>Browse more campgrounds</Button>
+            <Button className="btn">Browse more campgrounds</Button>
         </div>
     );
 };

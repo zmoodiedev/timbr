@@ -4,6 +4,7 @@
     transition: all .2s ease-in-out;
     box-shadow:  14px 14px 28px #e3e3e3,
                  -14px -14px 28px #ffffff;
+    height: 100%;
 }
 
 .card:hover {
