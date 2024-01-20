@@ -50,6 +50,10 @@
     width: 70%;
 }
 
+.cg-description {
+    margin-bottom: 3em;
+}
+
 .cg-icons {
     display: flex;
     justify-content: space-between;
@@ -60,12 +64,11 @@
 .cg-amenities,
 .cg-activities {
     flex: 50%;
-    display: flex;
 }
 
-.cg-amenities .amenity-icon,
-.cg-activities .amenity-icon {
-    flex: 1;
+.cg-amenities .amenity-icon img,
+.cg-activities .amenity-icon img {
+    width: 40px;
 }
 
 .cg-details-r {

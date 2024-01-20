@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import ActivityList from "../activityList";
-import activities from "../activities";
+import activitiesMap from "../activitiesMap";
 import '../../styles/userCard.css';
 
 
@@ -50,7 +50,7 @@ function UserCard() {
             </div>
             <div id='userActivities'>
                 <h5>Favourite Activities</h5>
-                <ActivityList activities={activities} className="user-activities" />
+                <ActivityList activities={activitiesMap} className="user-activities" />
             </div>
         </div>
     );

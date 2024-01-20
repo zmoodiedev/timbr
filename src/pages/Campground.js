@@ -5,15 +5,12 @@ import { db } from "../firebaseConfig";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareNodes, faHeart } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
 
 import Loader from "../components/common/loader";
 import Button from "../components/common/button";
 import CampPhotos from '../components/layout/campPhotos';
-import AmenityList from "../components/AmenityList";
-import amenities from "../components/amenities";
-import ActivityList from "../components/activityList";
-import activities from "../components/activities";
+import amenitiesMap from "../components/amenitiesMap";
+import activitiesMap from "../components/activitiesMap";
 import ReviewGrid from "../components/reviewGrid";
 
 import '../styles/campground.css';
@@ -22,6 +19,8 @@ const Campground = () => {
 
   const { campgroundId } = useParams();
   const [campground, setCampground] = useState(null);
+
+  
 
   useEffect(() => {
     const fetchCampground = async () => {
@@ -38,6 +37,24 @@ const Campground = () => {
     fetchCampground();
   }, [campgroundId]);
 
+
+  // Function to match amenities from Firebase to icons
+  const getAmenityIcons = (amenityNames) => {
+      return amenityNames.map(name => {
+          const matchedAmenity = amenitiesMap.find(amenity => amenity.name === name);
+          return matchedAmenity ? matchedAmenity.icon : null;
+      }).filter(icon => icon !== null);
+  };
+
+  // Function to match amenities from Firebase to icons
+  const getActivityIcons = (activityNames) => {
+    return activityNames.map(name => {
+        const matchedActivity = activitiesMap.find(activity => activity.name === name);
+        return matchedActivity ? matchedActivity.icon : null;
+    }).filter(icon => icon !== null);
+  };
+
+  
   return (
     <div className="page-container">
       {campground ? (
@@ -53,15 +70,25 @@ const Campground = () => {
         <CampPhotos />
         <div className="cg-details">
           <div className="cg-details-l">
-            <p>{campground.description}</p>
+            <div className="cg-description">
+              <p>{campground.description}</p>
+            </div>
             <div className="cg-icons">
               <div className='cg-amenities'>
                 <h3>Amenities</h3>
-                <AmenityList amenities={amenities} className="cg-available-amenities" />
+                <div className='cg-available-amenities amenity-list'>
+                  {getAmenityIcons(campground.amenities).map((Icon, index) => (
+                      <Icon key={index} className="amenity-icon" title={campground.amenities[index]} />
+                  ))}
+                </div>
               </div>
               <div className='cg-activities'>
                 <h3>Activities</h3>
-                <AmenityList amenities={amenities} className="cg-available-activities" />
+                <div className='cg-available-activities'>
+                  {getActivityIcons(campground.activities).map((Icon, index) => (
+                      <Icon key={index} className="activity-icon" title={campground.activities[index]} /> // Ensure Icons are rendered as components
+                  ))}
+                </div>
               </div>
             </div>
             <hr />

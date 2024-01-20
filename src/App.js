@@ -13,6 +13,7 @@ import SubmitCampground from './pages/admin/SubmitCampground';
 import UserProfile from './pages/UserProfile';
 import Campground from './pages/Campground';
 import Footer from './components/layout/footer';
+import NotFound from './pages/404';
 import './index.css';
 import './styles/variables.css';
 
@@ -80,6 +81,7 @@ function App() {
             <Route path="/submit-campground" element={<SubmitCampground />} />
             <Route path='/user/:username' element={user ? <UserProfile /> : <Authentication />} />
             <Route path="/campground/:campgroundId" element={<Campground />} />
+            <Route path='*' element={<NotFound />}/>
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
             <Route path="/signup" element={<Authentication />} />

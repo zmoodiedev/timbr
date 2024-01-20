@@ -1,52 +1,108 @@
+#campSubmit {
+    background-color: var(--charcoal);
+    color: #fff;
+}
+
+#campSubmit h1 {
+    color: #fff;
+    margin-bottom: 1.6em;
+}
+
+.cg-submit-wrap {
+    display: flex;
+    gap: 5rem;
+}
+
+.cg-submit-l {
+    flex: 50%;
+    text-align: center;
+}
+
+.tmbr-icon {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto 3em;
+}
+
+.cg-submit-r {
+    flex: 50%;
+}
+
 .campground-form {
-    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
+    padding: 1.3em;
+    background-color: transparent;
     border-radius: 8px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 1.8em;
 }
 
 .form-group label {
+    font-size: .9em;
+    font-weight: 600;
+    color: var(--light-green);
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.form-group textarea{
+    resize: vertical;
+}
+
+.form-group.split {
+    display: flex;
+    gap: 2em;
+}
+
+.form-half {
+    flex: 50%;
 }
 
 .form-control {
     width: 100%;
+    font-size: 1.1em;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.submit-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.submit-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Additional styles for checkboxes, file inputs, etc. */
-.checkbox-group, .file-group {
+.icon-group {
     display: flex;
+    gap: .6rem;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-betweens;
+    align-items: center;
 }
 
-.checkbox-group label, .file-group label {
-    flex-basis: 100%;
+.light-note {
+    font-size: .8em;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--light-gray);
 }
 
-.checkbox-group input[type="checkbox"], .file-group input[type="file"] {
-    flex-basis: auto;
+.icon {
+    width: 2.2em;
+    cursor: pointer;
+}
+
+.icon path {
+    opacity: .1;
+    fill: #fff;;
+}
+
+.icon:hover path {
+    opacity: 1;
+}
+
+.icon:hover path {
+    fill: var(--light-green);
+}
+
+.icon.selected path{
+    opacity: 1;
 }
