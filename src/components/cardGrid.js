@@ -28,18 +28,25 @@ function CardGrid() {
         fetchData();
     }, []);
 
+    console.log(campgroundData);
 
     return (
         <div className="container card-grid-wrap">
-            <div id="cardGrid">
-            {campgroundData.map((campground) => (
-                <Link to={`/campground/${campground.id}`}>
-                    <CampCard id={campground.id} name={campground.name} price={campground.price} />
-                </Link>
-            ))}
-
-                
-            </div>
+            
+            {campgroundData[0] ? (
+                <div id="cardGrid">
+                    {campgroundData.map((campground) => (
+                    <Link to={`/campground/${campground.id}`} key={campground.id}>
+                        <CampCard
+                            id={campground.id}
+                            image={campground.images ? campground.images[0] : '../assets/images/defaultImg.jpg'}
+                            name={campground.name}
+                            priceRange={campground.priceRange}
+                        />
+                    </Link>
+                ))}</div>
+            ) : (<p>There are no campgrounds currently listed.</p>)}
+            
         </div>
     );
 };

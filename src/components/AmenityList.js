@@ -1,13 +1,13 @@
 import React from 'react';
-import AmenityItem from './AmenityItem';
+import amenitiesMap from "./amenitiesMap";
 import '../styles/amenities.css';
 
-const AmenityList = ({ amenities, className }) => {
+const AmenityList = () => {
 
   return (
-    <div className={`amenity-list ${className}`}>
-      {amenities.map((amenity, index) => (
-        <AmenityItem key={index} name={amenity.name} icon={amenity.icon} />
+    <div className={`amenity-list`}>
+      {amenitiesMap.map((amenity, index) => (
+        <amenity.icon className="amenity" key={index} name={amenity.name} icon={amenity.icon} />
       ))}
     </div>
   );

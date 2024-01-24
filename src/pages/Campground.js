@@ -86,7 +86,7 @@ const Campground = () => {
                 <h3>Activities</h3>
                 <div className='cg-available-activities'>
                   {getActivityIcons(campground.activities).map((Icon, index) => (
-                      <Icon key={index} className="activity-icon" title={campground.activities[index]} /> // Ensure Icons are rendered as components
+                      <Icon key={index} className="activity-icon" title={campground.activities[index]} />
                   ))}
                 </div>
               </div>

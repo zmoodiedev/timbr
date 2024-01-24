@@ -7,51 +7,48 @@ button {
 
 button.btn {
     font-family: var(--main-font);
-    font-weight: 500;
-    font-size: .8em;
-    padding: 8px 20px;
-    display: inline-block;
-    position: relative;
+    align-items: center;
+    appearance: none;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,var(--medium-gray) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
     overflow: hidden;
-    border: 2px solid var(--pink);
-    transition: color .5s;
-    z-index: 1;
-    border-radius: 50px;
-    color: var(--pink);
-    background: transparent;
-    box-shadow:  4px 4px 9px #bebebe,
-    -4px -4px 9px #ffffff;
-    }
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 1em;
+}
     
-    button.btn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--pink);
-    height: 150px;
-    width: 350px;
-    border-radius: 50%;
-    }
-    
-    button.btn:hover {
-    color: #fff;
-    }
-    
-    button.btn:before {
-    top: 100%;
-    left: 100%;
-    transition: all .7s;
-    }
-    
-    button.btn:hover:before {
-    top: -30px;
-    left: -30px;
-    }
-    
-    button.btn:active:before {
-    background: var(--pink);
-    transition: background 0s;
-    }
+button.btn:focus {
+    box-shadow: var(light-gray) 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(light-gray) 0 -3px 0 inset;
+}
+
+button.btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--dark-gray) 0 -3px 0 inset;
+    transform: translateY(4px);
+}
+
+button.btn:active {
+    box-shadow: var(light-gray) 0 3px 7px inset;
+    transform: translateY(2px);
+}
 
 button.simple-btn {
     color: #fff;

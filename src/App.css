@@ -106,3 +106,9 @@ hr {
   font-family: var(--secondary-font);
   font-weight: 500;
 }
+
+.dol {
+  font-size: .7em;
+  position: relative;
+  top:  -0.4em; 
+}

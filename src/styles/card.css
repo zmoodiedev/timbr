@@ -5,6 +5,7 @@
     box-shadow:  14px 14px 28px #e3e3e3,
                  -14px -14px 28px #ffffff;
     height: 100%;
+    color: var(--charcoal);
 }
 
 .card:hover {
@@ -12,16 +13,14 @@
                  -7px -7px 28px #ffffff;
 }
 
-.card a {
+.card-content a {
     text-decoration: none;
-    color: var(--charcoal);
 }
 
 .card img.card-feature {
     width: 100%;
-    min-height: 180px;
     border-radius: 6px 6px 0 0;
-    max-height: 200px;
+    height: 180px;
     object-fit: cover;
     object-position: center;
 }
@@ -45,9 +44,7 @@
 .card .rating {
     font-size: 0.9em;
     font-weight: 600;
-    position: absolute;
-    top: 8px;
-    right: 10px;
+    float: right
 }
 
 .card .rating .star {
@@ -64,4 +61,6 @@
     font-size: 1em;
     font-weight: 700;
     line-height: 1.6;
+    color: var(--medium-green);
+    padding: .8em 0 0 0;
 }

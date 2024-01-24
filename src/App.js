@@ -7,7 +7,7 @@ import Header from './components/layout/header';
 import HeaderHome from './components/layout/headerHome';
 import Home from './pages/Home';
 import Authentication from './authentication/Authentication';
-import About from './pages/About';
+import CampingTips from './pages/CampingTips';
 import Explore from './pages/Explore';
 import SubmitCampground from './pages/admin/SubmitCampground';
 import UserProfile from './pages/UserProfile';
@@ -76,12 +76,12 @@ function App() {
             <Route index element={<Home />}/>
           </Route>
           <Route path="/" element={<MainLayout />}>
-            <Route path="/about" element={<About />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/camping-tips" element={<CampingTips />} />
             <Route path="/submit-campground" element={<SubmitCampground />} />
             <Route path='/user/:username' element={user ? <UserProfile /> : <Authentication />} />
             <Route path="/campground/:campgroundId" element={<Campground />} />
-            <Route path='*' element={<NotFound />}/>
+            <Route path='*' element={<NotFound />}/>      
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
             <Route path="/signup" element={<Authentication />} />

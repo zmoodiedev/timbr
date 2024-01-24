@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import ReactSlider from 'react-slider';
 import amenitiesMap from "../../components/amenitiesMap";
 import activitiesMap from "../../components/activitiesMap";
 import Button from "../../components/common/button";
@@ -8,27 +10,27 @@ import timbrIcon from '../../assets/images/icon-tmbr.png';
 
 import "../../styles/submitCamp.css"
 
-// Add a new document with a generated id.
-/*const docRef = await addDoc(collection(db, "campgrounds"), {
-    name: "Testing Publish",
-    description: "This is a test"
-  });
-  console.log("Document written with ID: ", docRef.id);*/
-
-
 export default function SubmitCampground() {
 
     const [campground, setCampground] = useState({
         name: '',
-        images: [], // Assuming an array of file objects
-        amenities: [], // Array of selected amenities
-        activities: [], // Array of selected activities
+        images: [],
+        amenities: [],
+        activities: [],
         description: '',
         location: { latitude: '', longitude: '' },
-        price: '',
+        priceRange: [0, 200],
         phoneNumber: '',
         website: ''
     });
+
+
+    const handleSliderChange = (value) => {
+        setCampground(prevState => ({
+            ...prevState,
+            priceRange: value
+        }));
+    };
 
     const handleChange = (event) => {
         const { name, value, type, files } = event.target;
@@ -54,6 +56,7 @@ export default function SubmitCampground() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const campgroundsColRef = collection(db, "campgrounds");
+        
 
         try {
             const location = {
@@ -63,9 +66,11 @@ export default function SubmitCampground() {
 
             const newCampground = {
                 ...campground,
-                location
+                location,
             };
             // Adjust this if your data needs to be transformed before sending
+            const imageUrls = await uploadImages(campground.images);
+            await saveCampgroundData(campground, imageUrls);
             const docRef = await addDoc(campgroundsColRef, newCampground);
             console.log("Document written with ID: ", docRef.id);
 
@@ -75,6 +80,27 @@ export default function SubmitCampground() {
         }
     };
 
+    const uploadImages = async (images) => {
+        const storage = getStorage();
+        const uploadPromises = images.map((image, index) => {
+            const storageRef = ref(storage, `campgrounds/${Date.now()}_${index}`);
+            return uploadBytes(storageRef, image).then(snapshot => getDownloadURL(snapshot.ref));
+        });
+
+        return Promise.all(uploadPromises);
+    };
+
+    const saveCampgroundData = async (campgroundData, imageUrls) => {
+        const campgroundsColRef = collection(db, "campgrounds");
+        
+        const newCampgroundData = {
+            ...campgroundData,
+            images: imageUrls
+        };
+        console.log("Data being sent to Firestore:", newCampgroundData);
+        return addDoc(campgroundsColRef, newCampgroundData);
+    };
+
     return (
         <div id="campSubmit">
             <div className="page-container cg-submit-wrap">
@@ -82,7 +108,7 @@ export default function SubmitCampground() {
                 <div className="cg-submit-l">
                     <img src={timbrIcon} alt="tmbr Icon" className="tmbr-icon" />
                     <h1>Submit a Campground</h1>
-                    <p>Have a hidden gem or a favorite spot? We're always looking to grow our collection of amazing campgrounds. Share details about your favorite camping locations and help other adventurers discover new places to explore. Submitting is easy – just fill in the information here. Whether it's a well-known park or an off-the-beaten-path escape, your contributions make <span class="tmbr-ref">tmbr</span> the go-to resource for outdoor enthusiasts like you!</p>
+                    <p>Have a hidden gem or a favorite spot? We're always looking to grow our collection of amazing campgrounds. Share details about your favorite camping locations and help other adventurers discover new places to explore. Submitting is easy – just fill in the information here. Whether it's a well-known park or an off-the-beaten-path escape, your contributions make <span className="tmbr-ref">tmbr</span> the go-to resource for outdoor enthusiasts like you!</p>
                 </div>
                 <div className="cg-submit-r">
                 
@@ -108,6 +134,7 @@ export default function SubmitCampground() {
                                             key={index} 
                                             className={`icon ${campground.amenities.includes(amenity.name) ? 'selected' : ''}`}
                                             onClick={() => handleIconClick('amenities', amenity.name)}
+                                            title={amenity.name}
                                         >
                                             <amenity.icon />
                                         </div>
@@ -124,6 +151,7 @@ export default function SubmitCampground() {
                                     key={index} 
                                     className={`icon ${campground.activities.includes(activity.name) ? 'selected' : ''}`}
                                     onClick={() => handleIconClick('activities', activity.name)}
+                                    title={activity.name}
                                 >
                                     <activity.icon />
                                 </div>
@@ -143,8 +171,20 @@ export default function SubmitCampground() {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="price">Price Range</label>
-                            <input className="form-control" type="number" name="price" onChange={handleChange} />
+                            <ReactSlider
+                                className="horizontal-slider"
+                                thumbClassName="thumb"
+                                trackClassName="track"
+                                value={campground.priceRange}
+                                onChange={handleSliderChange}
+                                ariaLabel={['Lower thumb', 'Upper thumb']}
+                                ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                                renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                                pearling
+                                minDistance={10}
+                            />
+
+                            <div>Selected range: <span class="dol">$</span>{campground.priceRange[0]} - <span class="dol">$</span>{campground.priceRange[1]}</div>
                         </div>
 
                         <div className="form-group split">

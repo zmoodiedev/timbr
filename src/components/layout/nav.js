@@ -27,7 +27,7 @@ function Navigation() {
             </div>
             <ul className="main-nav">
                 <li><Link to="/explore">Explore</Link></li>
-                <li><Link to="/">Camping Tips</Link></li>
+                <li><Link to="/camping-tips">Camping Tips</Link></li>
                 <li>
                     {user ?
                         <Link to="/submit-campground">Submit a Campground</Link> :
