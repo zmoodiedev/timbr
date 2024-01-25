@@ -4,7 +4,7 @@ const Explore = () => {
 
 
     return (
-        <div className='container-fw'>
+        <div className='page-container'>
             <h1>Explore</h1>
         </div>
     )

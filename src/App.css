@@ -112,3 +112,7 @@ hr {
   position: relative;
   top:  -0.4em; 
 }
+
+.sml {
+  font-size: .8rem;
+}

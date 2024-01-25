@@ -1,12 +1,14 @@
 import {React, useEffect } from 'react';
 import { Routes, Route, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser, setLoading } from './features/userSlice';
+import { loginUser, setLoading } from './utilities/UserSlice';
 import { auth } from './firebaseConfig';
 import Header from './components/layout/header';
 import HeaderHome from './components/layout/headerHome';
 import Home from './pages/Home';
 import Authentication from './authentication/Authentication';
+import SignUp from './authentication/SignUp';
+import Login from './authentication/Login';
 import CampingTips from './pages/CampingTips';
 import Explore from './pages/Explore';
 import SubmitCampground from './pages/admin/SubmitCampground';
@@ -84,8 +86,11 @@ function App() {
             <Route path='*' element={<NotFound />}/>      
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
-            <Route path="/signup" element={<Authentication />} />
-            <Route path="/login" element={<Authentication />} />
+            <Route path="/auth" element={<Authentication />}>
+              <Route path="signup" element={<SignUp />} />
+              <Route path="login" element={<Login />} />
+            </Route>
+            
           </Route>
         </Routes>
     </div>

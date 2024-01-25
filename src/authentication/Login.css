@@ -1,13 +1,8 @@
 .login {
-    padding: 3.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    border: 1px solid var(--charcoal);
     text-align: center;
 }
 
@@ -18,7 +13,7 @@
 .input-container {
     padding: .5rem;
     background-color: var(--light-gray);
-    margin: .5rem 0;
+    margin: 1em 0;
     border-radius: 5px;
   }
   
@@ -35,4 +30,5 @@
   input:focus {
     outline: none;
   }
+
 

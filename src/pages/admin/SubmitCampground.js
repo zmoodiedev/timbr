@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import timbrIcon from '../../assets/images/icon-tmbr.png';
 import ReactSlider from 'react-slider';
-import amenitiesMap from "../../components/amenitiesMap";
+import amenitiesMap from "../../utilities/amenitiesMap";
 import activitiesMap from "../../components/activitiesMap";
 import Button from "../../components/common/button";
-import timbrIcon from '../../assets/images/icon-tmbr.png';
 
 import "../../styles/submitCamp.css"
 

@@ -17,7 +17,7 @@
     color: var(--charcoal);
 }
 
-.cg-interactions a.favorite {
+.cg-interactions .favorite {
     font-size: 1.2em;
     color: var(--pink);
     transition: all .2s ease-in-out;
@@ -66,9 +66,14 @@
     flex: 50%;
 }
 
-.cg-amenities .amenity-icon img,
-.cg-activities .amenity-icon img {
-    width: 40px;
+.cg-available-amenities {
+    display: flex;
+    gap: 1em;
+}
+
+.cg-amenities .amenity-icon,
+.cg-activities .amenity-icon {
+    width: 2em;
 }
 
 .cg-details-r {

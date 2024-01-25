@@ -4,13 +4,14 @@ import CardGrid from './cardGrid';
 import Button from './common/button';
 
 import '../styles/amenityFilter.css';
-import AmenityList from './AmenityList';
+import AmenityIcons from '../utilities/AmenityIcons';
+import amenitiesMap from '../utilities/amenitiesMap';
 
 
 function AmenityFilter() {
     return (
         <div id="amenityFilter">
-            <AmenityList />
+            {/*<AmenityIcons amenitiesMap={amenitiesMap} />*/}
             <CardGrid />
             <Button className="btn">Browse more campgrounds</Button>
         </div>

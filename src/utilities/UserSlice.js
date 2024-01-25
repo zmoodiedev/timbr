@@ -5,7 +5,7 @@ const initialState = {
     isLoading: true,
 };
 
-export const userSlice = createSlice({
+export const UserSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
@@ -21,4 +21,4 @@ export const userSlice = createSlice({
     }
 });
 
-export const {loginUser, logoutUser, setLoading} = userSlice.actions;
+export const {loginUser, logoutUser, setLoading} = UserSlice.actions;

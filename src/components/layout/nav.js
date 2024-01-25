@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loginUser } from '../../features/userSlice';
+import { loginUser } from '../../utilities/UserSlice';
 import { getAuth, signOut } from "firebase/auth";
 import '../../styles/nav.css';
 
@@ -39,7 +39,7 @@ function Navigation() {
                 {user ?
                     <><Link to={`/user/${user.username}`} className="username">{user.username}</Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
                     <>
-                        <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
+                        <Link to="/auth/signup">Sign Up</Link> | <Link to="/auth/login">Login</Link>
                     </>
                 }
             </div>

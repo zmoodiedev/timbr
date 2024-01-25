@@ -1,7 +1,9 @@
 import { React, useState } from "react";
 import { auth } from '../firebaseConfig';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import './Signup.css';
+import {  Link } from "react-router-dom";
+import Button from "../components/common/button";
+import './SignUp.css';
 
 const SignUp = () => {
 
@@ -22,7 +24,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="signup">
+        <div className="auth__form signup">
         <h1>Sign Up</h1>
             <form className="form signup-form">
                 <div className="input-container">
@@ -34,9 +36,9 @@ const SignUp = () => {
                 <div className="input-container">
                     <input type="password" className="input" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" />
                 </div>
-
-                <button type="submit" className="input-submit" onClick={handleSignup}>Sign Up</button>
+                <div className="sml">Already have an account? <Link to="/auth/login">Login!</Link></div>
             </form>
+            <Button type="submit" className="auth__btn btn" onClick={handleSignup}>Sign up</Button>
         </div>
 
     );

@@ -40,4 +40,12 @@
 .empty-photo:first-of-type::before {
     font: var(--fa-font-solid);
     content: ' \f575';
-};
+}
+
+@media (max-width: 700px) {
+    
+    .photo-1 {
+        grid-area: 1 / 3 / 3 / 4;
+        max-height: 200px;
+    }
+}
