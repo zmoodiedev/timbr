@@ -1,6 +1,6 @@
 import {React, useEffect } from 'react';
 import { Routes, Route, Outlet } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { loginUser, setLoading } from './utilities/UserSlice';
 import { auth } from './firebaseConfig';
 import Header from './components/layout/header';
@@ -68,9 +68,6 @@ function App() {
     });
   }, [dispatch]);
 
-
-  const user = useSelector((state) => state.data.user.user);
-
   return (
     <div className="App">
         <Routes>
@@ -81,7 +78,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/camping-tips" element={<CampingTips />} />
             <Route path="/submit-campground" element={<SubmitCampground />} />
-            <Route path='/user/:username' element={user ? <UserProfile /> : <Authentication />} />
+            <Route path='/user/:username' element={<UserProfile />} />
             <Route path="/campground/:campgroundId" element={<Campground />} />
             <Route path='*' element={<NotFound />}/>      
           </Route>

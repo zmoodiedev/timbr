@@ -1,56 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import ActivityList from "../activityList";
-import activitiesMap from "../activitiesMap";
+import React from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/userCard.css';
 
 
 
-function UserCard() {
-    
-    const [user, setUser] = useState(null);
-    const auth = getAuth();
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser) {
-                // User is signed in.
-                setUser(currentUser);
-            } else {
-                // No user is signed in.
-                setUser(null);
-            }
-        });
-
-        // Cleanup subscription on unmount
-        return () => unsubscribe();
-    }, [auth]);
-
-    if (!user) {
-        return <div>Loading user profile...</div>;
-    }
+const UserCard = ({username, verified}) => {
 
     return (
         <div id='userCard'>
             <div id='userHeader'>
                 <div className='user-image'>
-                    <img src={user.photoURL} alt='Test Name' />
+                    <img src="#" alt={username} />
                 </div>
-                <h4 className='username'>{user.displayName}</h4>
-                <span className='user-joined'>Joined in 2023</span>
-                <span className='user-verified'>Verified</span>
+                <div className="user-status">
+                    <h4 className='username'>{username}</h4>
+                    <span className='user-joined'>Joined in 2023</span>
+                    <span className='user-verified'>
+                        { verified ?(
+                            <span className="status-y">Verified</span>
+                        ) : (
+                            <span className="status-n">Not Verified</span>
+                        )}
+                    </span>
+                    <div className='user-stats'>
+                        <div className='user-favourites'>8 Favorites</div>
+                        <div className='user-reviews'>2 Reviews</div>
+                    </div>
+                    
+                </div>
             </div>
-            <div id='userInteraction'>
-                <div className='user-favourites'>
-                    8 Favorites
-                </div>
-                <div className='user-reviews'>
-                    2 Reviews
-                </div>
-            </div>
+            
             <div id='userActivities'>
                 <h5>Favourite Activities</h5>
-                <ActivityList activities={activitiesMap} className="user-activities" />
+                {/*<ActivityList activities={activitiesMap} className="user-activities" /> */}
             </div>
         </div>
     );

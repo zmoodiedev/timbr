@@ -6,3 +6,9 @@
 #userInfo {
     flex: 4;
 }
+
+@media screen and ( width < 992px ) {
+    #userProfile {
+        flex-direction: column;
+    }
+} 
