@@ -37,9 +37,32 @@
     background-color: var(--light-green);
 }
 
-.empty-photo:first-of-type::before {
-    font: var(--fa-font-solid);
-    content: ' \f575';
+.empty-photo {
+    background-color: #f7f7f7;
+    border: 1px solid var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-photo .img-camera {
+    font-size: 4em;
+    opacity: .5;
+    transition: all .2s ease-in-out;
+}
+
+.empty-photo:hover {
+    cursor: pointer;
+}
+
+
+.empty-photo:hover .img-camera{
+    opacity: 1;
+}
+
+
+.empty-photo:not(:first-of-type) .img-camera {
+    display: none;
 }
 
 @media (max-width: 700px) {

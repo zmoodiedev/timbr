@@ -10,8 +10,8 @@ function CampgroundHeader({name}) {
         <div className="cg-header">
             <h1>{name}</h1>
             <div className='cg-interactions'>
-                <Button className="share"><FontAwesomeIcon icon={faShareNodes} /></Button>
-                <Button className="favorite"><FontAwesomeIcon icon={faHeart} /></Button>
+                <Button className="share"><FontAwesomeIcon title="Share" icon={faShareNodes} /></Button>
+                <Button className="favorite"><FontAwesomeIcon title="Favorite" icon={faHeart} /></Button>
                 <Button className="btn">Submit a review</Button>
             </div>
         </div>

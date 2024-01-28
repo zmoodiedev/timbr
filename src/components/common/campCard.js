@@ -14,10 +14,8 @@ function CampCard({id, image, name, priceRange}) {
                 <span className="rating">4.6 <Star className="star" /></span>
                 <span className="name">{name}</span>
                 <span className="distance">300kms away</span>
-                { priceRange ? (
+                { priceRange && (
                     <span className="price"><span className="dol">$</span>{priceRange[0]} - <span className="dol">$</span>{priceRange[1]}</span>
-                ) : (
-                    <></>
                 )}
             </div>
         </div>

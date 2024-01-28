@@ -1,0 +1,6 @@
+#campContact {
+    width: 100%;
+    border: 1px solid var(--light-gray);
+    border-radius: .8em;
+    padding: 1.4em;
+}

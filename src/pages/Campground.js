@@ -7,8 +7,11 @@ import CampgroundHeader from "../components/campHeader";
 import CampPhotos from '../components/campPhotos';
 import AmenityIcons from '../utilities/AmenityIcons';
 import amenitiesMap from "../utilities/amenitiesMap";
-import activitiesMap from "../components/activitiesMap";
+import ActivityIcons from '../utilities/ActivityIcons';
+import activitiesMap from "../utilities/activitiesMap";
 import ReviewGrid from "../components/reviewGrid";
+import CampMap from '../components/campMap';
+import CampContact from '../components/campContact';
 
 import '../styles/campground.css';
 
@@ -34,14 +37,6 @@ const Campground = () => {
     fetchCampground();
   }, [campgroundId]);
 
-  // Function to match amenities from Firebase to icons
-  const getActivityIcons = (activityNames) => {
-    return activityNames.map(name => {
-        const matchedActivity = activitiesMap.find(activity => activity.name === name);
-        return matchedActivity ? matchedActivity.icon : null;
-    }).filter(icon => icon !== null);
-  };
-
   
   return (
     <div className="page-container">
@@ -61,17 +56,16 @@ const Campground = () => {
               </div>
               <div className='cg-activities'>
                 <h3>Activities</h3>
-                <div className='cg-available-activities'>
-                  {getActivityIcons(campground.activities).map((Icon, index) => (
-                      <Icon key={index} className="activity-icon" title={campground.activities[index]} />
-                  ))}
-                </div>
+                  <ActivityIcons activities={campground.activities} activitiesMap={activitiesMap} />
               </div>
             </div>
             <hr />
             <ReviewGrid />
           </div>
-          <div className="cg-details-r"></div>
+          <div className="cg-details-r">
+            <CampMap />
+            <CampContact priceRange={campground.priceRange} phone={campground.phone} website={campground.website} />
+          </div>
         </div>
         </>
 

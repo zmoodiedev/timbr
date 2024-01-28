@@ -66,13 +66,14 @@
     flex: 50%;
 }
 
-.cg-available-amenities {
+.cg-available-amenities,
+.cg-available-activities {
     display: flex;
     gap: 1em;
 }
 
 .cg-amenities .amenity-icon,
-.cg-activities .amenity-icon {
+.cg-activities .activity-icon {
     width: 2em;
 }
 
