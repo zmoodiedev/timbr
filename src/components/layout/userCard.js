@@ -6,13 +6,18 @@ import '../../styles/userCard.css';
 
 
 
-const UserCard = ({username, verified}) => {
+const UserCard = ({ profilePic, username, verified }) => {
+
+    let imageUrl = profilePic;
+    if (profilePic instanceof File) {
+        imageUrl = URL.createObjectURL(profilePic);
+    }
 
     return (
         <div id='userCard'>
             <div id='userHeader'>
                 <div className='user-image'>
-                    <img src="#" alt={username} />
+                    {imageUrl && <img src={imageUrl} alt={username} />}
                 </div>
                 <div className="user-status">
                     <h4 className='username'>{username}</h4>
@@ -36,6 +41,7 @@ const UserCard = ({username, verified}) => {
                 <h5>Favourite Activities</h5>
                 {/*<ActivityList activities={activitiesMap} className="user-activities" /> */}
             </div>
+            
         </div>
     );
 };

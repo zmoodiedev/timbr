@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, query, where, getDocs, doc, updateDoc } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { getAuth, updateProfile } from 'firebase/auth';
 import { db } from '../firebaseConfig';
 import UserCard from '../components/layout/userCard';
+import UserInfo from '../components/userInfo';
 import CampGrid from '../components/campGrid';
 import ReviewGrid from '../components/reviewGrid';
 import Loader from '../components/common/loader';
-import Button from '../components/common/button';
+
 
 import '../styles/userProfile.css';
 
 const UserProfile = () => {
-  const { username, bio, verified } = useParams();
+  const { username } = useParams();
   const auth = getAuth();
   const loggedInUser = auth.currentUser;
   const [isEditMode, setIsEditMode] = useState(false);
-  const [editedProfile, setEditedProfile] = useState(); 
+  const [editedProfile, setEditedProfile] = useState({});
   const [userProfile, setUserProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [userFound, setUserFound] = useState(false);
@@ -29,98 +31,136 @@ const UserProfile = () => {
       if (username) {
           fetchUserData(username);
       }
-  }, [username]);
+    }, [username]);
+    
+    useEffect(() => {
+      if (userProfile && isEditMode) {
+          setEditedProfile(userProfile);
+      }
+    }, [userProfile, isEditMode]);
 
-  const fetchUserData = async (username) => {
-      setIsLoading(true);
-      
-      const usersRef = collection(db, "users");
-      const q = query(usersRef, where("username", "==", username));
+    const fetchUserData = async (username) => {
+        setIsLoading(true);
+        
+        const usersRef = collection(db, "users");
+        const q = query(usersRef, where("username", "==", username));
 
-      try {
-          const querySnapshot = await getDocs(q);
-          if (!querySnapshot.empty) {
-              setUserProfile(querySnapshot.docs[0].data());
-              setUserFound(true);
-          } else {
-            console.log('No user data found or failed to fetch');
+        try {
+            const querySnapshot = await getDocs(q);
+            if (!querySnapshot.empty) {
+                setUserProfile(querySnapshot.docs[0].data());
+                setUserFound(true);
+            } else {
+              console.log('No user data found or failed to fetch');
+              setUserProfile(null);
+              setUserFound(false);
+            }
+          } catch (error) {
+            console.error("Error fetching user data: ", error);
             setUserProfile(null);
             setUserFound(false);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const uploadProfilePicture = async (file) => {
+      const storage = getStorage();
+      const storageRef = ref(storage, 'profilePics/' + file.name); // Customize the path as needed
+  
+      try {
+          const snapshot = await uploadBytes(storageRef, file);
+          const downloadURL = await getDownloadURL(snapshot.ref);
+          return downloadURL;
+      } catch (error) {
+          console.error("Error uploading file: ", error);
+          throw error; // Rethrow the error for handling it in the calling function
+      }
+    };
+
+    const handleProfileUpdate = async (e) => {
+      e.preventDefault();
+      
+      try {
+        let updatedProfile = { ...editedProfile };
+        const newUsername = editedProfile.username;
+          
+
+        if (updatedProfile.profilePic instanceof File) {
+          const downloadURL = await uploadProfilePicture(updatedProfile.profilePic);
+          updatedProfile.profilePic = downloadURL; // Replace File object with URL string
+        }
+
+        // Update the profile in Firestore
+        const userRef = doc(db, 'users', loggedInUser.uid);
+        await updateDoc(userRef, updatedProfile);
+
+        // Update the displayName in Firebase Authentication if the username has changed
+        if (newUsername !== loggedInUser.displayName) {
+          await updateProfile(loggedInUser, { displayName: newUsername });
+
+        }
+
+        // Update the local state and exit edit mode
+        setUserProfile(updatedProfile);
+        setIsEditMode(false);
+      } catch (error) {
+          console.error("Error updating profile: ", error);
+          // Handle errors (e.g., show error message)
+      }
+    };
+
+    const onProfileChange = (e) => {
+      if (e.target.name === 'profilePic') {
+          const file = e.target.files[0];
+          if (file) {
+              // You might want to handle the file upload here or set the file in state
+              setEditedProfile({ ...editedProfile, profilePic: file });
           }
-        } catch (error) {
-          console.error("Error fetching user data: ", error);
-          setUserProfile(null);
-          setUserFound(false);
-      } finally {
-          setIsLoading(false);
+      } else {
+          // Handle other form inputs
+          setEditedProfile({ ...editedProfile, [e.target.name]: e.target.value });
       }
   };
 
-  const handleProfileUpdate = async (e) => {
-    e.preventDefault();
 
-    try {
-        // Update the profile in Firestore
-        const userRef = doc(db, 'users', loggedInUser.uid);
-        await updateDoc(userRef, editedProfile);
 
-        // Update the local state and exit edit mode
-        setUserProfile(editedProfile);
-        setIsEditMode(false);
-    } catch (error) {
-        console.error("Error updating profile: ", error);
-        // Handle errors (e.g., show error message)
-    }
-  };
 
-  if (isLoading) {
-    return (
-      <div id='userProfile' className='page-container'><Loader /></div>
-      )
-  }
-  
   return (
-    <div id='userProfile' className='page-container'>
-    {isLoading && (<Loader />)}
-    {!userFound && (<h3>The user {username} does not exist.</h3>)}
-
-    {userProfile && (
+    <div className='page-container'>
       <>
-        <UserCard
-          username={username}
-          verified={verified} />
-        <div id="userInfo">
-          <h1>Member Profile</h1>
-          <hr/>
-          <h3>Bio</h3>
-          {bio ? (
-            <p>{bio}</p>
-          ) : (
-            <p>There is no bio for this user yet.</p>
-          )}
-          <CampGrid />
-          <h3>Member Reviews</h3>
-          <ReviewGrid user={userProfile.uid} />
-          {isOwnProfile && !isEditMode && (
-                    <Button className="btn" onClick={() => setIsEditMode(true)}>Edit Profile</Button>
-                )}
-
-                {isOwnProfile && isEditMode && (
-                    <form onSubmit={handleProfileUpdate}>
-                        <input
-                            type="text"
-                            value={editedProfile.username}
-                            onChange={(e) => setEditedProfile({ ...editedProfile, username: e.target.value })}
-                        />
-                        
-                        <Button className="btn" type="submit">Save Changes</Button>
-                        <Button className="btn" onClick={() => setIsEditMode(false)}>Cancel</Button>
-                    </form>
-                  )}
-        </div>
-
+        {isLoading && (<Loader />)}
+        {!userFound && !isLoading && (<h3>The user {username} does not exist.</h3>)}
       </>
-      )}
+      <div id='userProfile'>
+      {userProfile && (
+            <>
+                <UserCard
+                    profilePic={userProfile.profilePic}
+                    username={userProfile.username}
+                    verified={userProfile.verified}
+                />
+                <div className="user-info">
+                  <UserInfo
+                      userProfile={userProfile}
+                      isOwnProfile={isOwnProfile}
+                      isEditMode={isEditMode}
+                      onEditClick={() => setIsEditMode(true)}
+                      onEditSubmit={handleProfileUpdate}
+                      onEditCancel={() => setIsEditMode(false)}
+                      editedProfile={editedProfile}
+                      onProfileChange={onProfileChange}
+                  />
+                  {!isEditMode && (
+                    <>
+                      <CampGrid />
+                      <ReviewGrid user={userProfile.uid} />
+                    </>
+                  )}
+                </div>
+            </>
+        )}
+      </div>
     </div>
   );
 };

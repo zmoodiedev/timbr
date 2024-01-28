@@ -39,40 +39,7 @@
     border-radius: 8px;
 }
 
-.form-group {
-    margin-bottom: 1.8em;
-}
 
-.form-group label {
-    font-size: .9em;
-    font-weight: 600;
-    color: var(--light-green);
-    display: block;
-    margin-bottom: 1em;
-    text-transform: uppercase;
-}
-
-.form-group textarea{
-    resize: vertical;
-}
-
-.form-group.split {
-    display: flex;
-    gap: 2em;
-}
-
-.form-half {
-    flex: 50%;
-}
-
-.form-control {
-    width: 100%;
-    font-family: var(--main-font);
-    font-size: 1em;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 
 .icon-group {
     display: flex;

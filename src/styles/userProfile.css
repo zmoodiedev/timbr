@@ -3,8 +3,15 @@
     gap: 3rem;
 }
 
-#userInfo {
+.user-info {
     flex: 4;
+    position: relative;
+}
+
+.btn.edit-profile {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 @media screen and ( width < 992px ) {

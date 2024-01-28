@@ -1,0 +1,4 @@
+.form-btn-group {
+    display: flex;
+    gap: 2em;
+}
