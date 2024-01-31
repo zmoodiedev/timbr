@@ -39,7 +39,7 @@ function Navigation() {
                 {user ?
                     <><Link to={`/user/${user.username}`} className="username">{user.username}</Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
                     <>
-                        <Link to="/auth/signup">Sign Up</Link> | <Link to="/auth/login">Login</Link>
+                        <Link to="/auth/login">Login</Link> | <Link to="/auth/signup">Sign Up</Link>
                     </>
                 }
             </div>

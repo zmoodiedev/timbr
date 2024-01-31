@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/card.css';
 import {ReactComponent as Star }  from '../../assets/images/_icons/star_full.svg';
+import placeholder from '../../assets/images/defaultImg.jpg';
 
 
 function CampCard({id, image, name, priceRange}) {
@@ -8,7 +9,12 @@ function CampCard({id, image, name, priceRange}) {
     return (
         <div className="card" key={id}>
             <div className="card-top">
-                <img src={image} alt={`Campground ${name}`} className="card-feature" />
+                { image ? (
+                    <img src={image} alt={`Campground ${name}`} className="card-feature" />
+                ): (
+                    <img src={placeholder} alt={`Campground ${name}`} className="card-feature" />
+                )}
+                
             </div>
             <div className="card-content">
                 <span className="rating">4.6 <Star className="star" /></span>

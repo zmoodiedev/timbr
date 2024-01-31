@@ -70,6 +70,7 @@
 .cg-available-activities {
     display: flex;
     gap: 1em;
+    flex-wrap: wrap;
 }
 
 .cg-amenities .amenity-icon,

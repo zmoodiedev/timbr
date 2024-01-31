@@ -10,7 +10,7 @@ import amenitiesMap from "../utilities/amenitiesMap";
 import ActivityIcons from '../utilities/ActivityIcons';
 import activitiesMap from "../utilities/activitiesMap";
 import ReviewGrid from "../components/reviewGrid";
-import CampMap from '../components/campMap';
+import LocationMap from '../components/locationMap';
 import CampContact from '../components/campContact';
 
 import '../styles/campground.css';
@@ -19,7 +19,6 @@ const Campground = () => {
 
   const { campgroundId } = useParams();
   const [campground, setCampground] = useState(null);
-
   
 
   useEffect(() => {
@@ -30,14 +29,22 @@ const Campground = () => {
       if (docSnap.exists()) {
         setCampground(docSnap.data());
       } else {
-        console.log('No such campground!');
+        <p>This campground does not exist.</p>
       }
     };
 
     fetchCampground();
   }, [campgroundId]);
 
-  
+  if (!campground) {
+    return <Loader />;
+  }
+
+    const { latitude, longitude } = campground.location || {};
+    const latNum = parseFloat(latitude);
+    const lngNum = parseFloat(longitude);
+
+
   return (
     <div className="page-container">
       {campground ? (
@@ -63,7 +70,12 @@ const Campground = () => {
             <ReviewGrid />
           </div>
           <div className="cg-details-r">
-            <CampMap />
+          
+            {(!isNaN(latNum) || !isNaN(lngNum)) ? (
+              <LocationMap lat={latNum} lng={lngNum} />
+            ) : (    
+              <></> 
+            )}
             <CampContact priceRange={campground.priceRange} phone={campground.phone} website={campground.website} />
           </div>
         </div>

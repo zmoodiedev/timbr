@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { Navigate } from 'react-router-dom';
 import timbrIcon from '../../assets/images/icon-tmbr.png';
 import ReactSlider from 'react-slider';
 import amenitiesMap from "../../utilities/amenitiesMap";
@@ -74,7 +75,7 @@ export default function SubmitCampground() {
             const docRef = await addDoc(campgroundsColRef, newCampground);
             console.log("Document written with ID: ", docRef.id);
 
-            // Optional: Clear form or give user feedback
+            Navigate('/campground/' + docRef.id);
         } catch (error) {
             console.error("Error adding document: ", error);
         }
@@ -106,7 +107,7 @@ export default function SubmitCampground() {
             <div className="page-container cg-submit-wrap">
 
                 <div className="cg-submit-l">
-                    <img src={timbrIcon} alt="tmbr Icon" className="tmbr-icon" />
+                    <img src={timbrIcon} alt="tmbr Logo" className="tmbr-icon" />
                     <h1>Submit a Campground</h1>
                     <p>Have a hidden gem or a favorite spot? We're always looking to grow our collection of amazing campgrounds. Share details about your favorite camping locations and help other adventurers discover new places to explore. Submitting is easy – just fill in the information here. Whether it's a well-known park or an off-the-beaten-path escape, your contributions make <span className="tmbr-ref">tmbr</span> the go-to resource for outdoor enthusiasts like you!</p>
                 </div>

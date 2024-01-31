@@ -4,7 +4,7 @@ import { collection, query, where, getDocs, doc, updateDoc } from 'firebase/fire
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { db } from '../firebaseConfig';
-import UserCard from '../components/layout/userCard';
+import UserCard from '../components/userCard';
 import UserInfo from '../components/userInfo';
 import CampGrid from '../components/campGrid';
 import ReviewGrid from '../components/reviewGrid';

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import CampGrid from './campGrid';
 import Button from './common/button';
 
@@ -10,7 +10,9 @@ function AmenityFilter() {
     return (
         <div id="amenityFilter">
             <CampGrid />
-            <Button className="btn">Browse more campgrounds</Button>
+            <Link to="/explore">
+                <Button className="btn" href="/explore">Explore more campgrounds</Button>
+            </Link>
         </div>
 
         

@@ -16,7 +16,7 @@ async function fetchDataFromFirestore() {
     return data;
 }
 
-function CampGrid() {
+const CampGrid = () => {
 
     const [campgroundData, setCampgroundData] = useState([]);
 
@@ -28,14 +28,24 @@ function CampGrid() {
         fetchData();
     }, []);
 
-    console.log(campgroundData);
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    } 
+
 
     return (
         <div className="container card-grid-wrap">
             
             {campgroundData[0] ? (
                 <div id="cardGrid">
-                    {campgroundData.map((campground) => (
+                    {shuffle(Array.from(campgroundData)).slice(0, 4).map((campground) => (
                     <Link to={`/campground/${campground.id}`} key={campground.id}>
                         <CampCard
                             id={campground.id}
