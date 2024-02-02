@@ -1,55 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebaseConfig";
-import { Link } from 'react-router-dom';
+import fetchReviews from '../hooks/fetchReviews';
+import Loader from './common/loader';
+import Button from './common/button';
 import Review from './review';
 import '../styles/reviewgrid.css';
 
-async function fetchDataFromFirestore() {
-    const querySnapshot = await getDocs(collection(db, "reviews"))
-
-    const data = [];
-    querySnapshot.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data()});
-    });
-    return data;
-}
-
-function ReviewGrid() {
-
-    const [reviewData, setReviewData] = useState([]);
+const ReviewGrid = ({ campgroundId }) => {
+    const [reviews, setReviews] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchData() {
-            const data = await fetchDataFromFirestore();
-            setReviewData(data);
-        }
-        fetchData();
-    }, []);
+        const getReviews = async () => {
+            setIsLoading(true);
+            try {
+                const fetchedReviews = await fetchReviews(campgroundId);
+                setReviews(fetchedReviews);
+            } catch (error) {
+                console.error('Error fetching reviews:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
 
-    console.log(reviewData);
+        if (campgroundId) {
+            getReviews();
+        }
+    }, [campgroundId]);
+
+    if (isLoading) return <Loader />;
 
     return (
-        <div className="review-grid-wrap">
-            <h2>Reviews</h2>
-            <div id="reviewGrid">
-            {reviewData[0] ? (
-                <div id="cardGrid">
-                    {reviewData.map((review) => (
-                    <Link to={`/campground/${review.id}`} key={review.id}>
-                        <Review
-                            id={review.id}
-                            rating={review.rating}
-                            review={review.reviewContent}
-                        />
-                    </Link>
-                ))}</div>
-            ) : (<p>There are no reviews currently listed.</p>)}
-            </div>
+        <div id="reviewGrid">
+        { (reviews.length > 0) ? (
+            <>
+                {reviews.map(review => (
+                    <Review key={review.id} username={review.username} review={review} />
+                ))}
+            </>
 
+            ) : (
+                <div className="noReviews">
+                    <p>There are no reviews for this campground yet. Why not be the first?</p>
+                    <Button className="btn">Be number one!</Button>
+                </div>
+            )}
         </div>
     );
 };
-
 
 export default ReviewGrid;

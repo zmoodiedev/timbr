@@ -4,3 +4,48 @@
     gap: 2rem;
     margin-top: 2em;
 }
+
+.review {
+    flex: 1;
+}
+
+.review-header {
+    display: flex;
+    gap: 1em;
+}
+
+.user-tn img{
+    width: 75px;
+    border-radius: 50%;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.user-name {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.user-location {
+    min-height: 1.4em;
+    font-size: .9em;
+}
+
+.user-review {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+.user-review p {
+    line-height: 1.5em;
+}
+    
+.timestamp {
+    font-size: .8em;
+}

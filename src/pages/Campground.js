@@ -67,7 +67,8 @@ const Campground = () => {
               </div>
             </div>
             <hr />
-            <ReviewGrid />
+            <h3>Reviews</h3>
+            <ReviewGrid campgroundId={campgroundId} />
           </div>
           <div className="cg-details-r">
           

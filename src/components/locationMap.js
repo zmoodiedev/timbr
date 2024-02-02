@@ -25,7 +25,7 @@ const LocationMap = ({ lat, lng }) => {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={10}
+                zoom={8}
                 className="camp-map"
                 options={{
                     gestureHandling: "greedy",

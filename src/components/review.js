@@ -1,23 +1,26 @@
 import React from 'react';
-import Stars from './stars';
+import getTimeDifference from '../hooks/getTimeDifference';
 import '../styles/review.css';
 
-function Review() {
+
+const Review = ({ review }) => {
+    const timeDifference = getTimeDifference(review.timestamp.toDate().toLocaleDateString("en-US"));
+
     return (
         <div className="review">
-           <div className="review-header">
+            <div className="review-header">
                 <div className="user-tn">
-                    <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="User" />
+                    <img src={review.profilePic} alt={review.username} />
                 </div>
                 <div className="user-details">
-                    <span className="user-name">Connor</span>
-                    <span className="user-location">Banff, Canada</span>
-                    <div className="user-review"><Stars /><span className="timestamp"> • 3 days ago</span></div>
+                    <span className="user-name ">{review.username}</span>
+                    <span className="user-location">{ review.userLocation ? (review.userLocation) : (<div></div>) }</span>
+                    <span className="rating">{review.rating}</span> <span className="review-time">{timeDifference}</span>
                 </div>
-           </div>
-           <div className="review-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin.</p>
-           </div>
+            </div>
+            <div className="user-review">
+                <p>{review.reviewContent}</p>
+            </div>
         </div>
     );
 };
