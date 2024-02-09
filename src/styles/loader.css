@@ -1,11 +1,17 @@
-.loader {
-    display: block;
+#loader {
+  width: 100%;
+  text-align: center;
+}
+
+.loader-wrap {
+    display: inline-block;
     position: relative;
     text-align: center;
     height: 80px;
+    width: auto;
     margin: 0 auto;
   }
-  .loader div {
+  .loader-wrap  div {
     position: absolute;
     top: 33px;
     width: 13px;
@@ -14,19 +20,19 @@
     background: var(--pink);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
-  .loader div:nth-child(1) {
+  .loader-wrap  .ball-1 {
     left: 8px;
     animation: loader1 0.6s infinite;
   }
-  .loader div:nth-child(2) {
+  .loader-wrap  .ball-2 {
     left: 8px;
     animation: loader2 0.6s infinite;
   }
-  .loader div:nth-child(3) {
+  .loader-wrap  .ball-3 {
     left: 32px;
     animation: loader2 0.6s infinite;
   }
-  .loader div:nth-child(4) {
+  .loader-wrap  .ball-4 {
     left: 56px;
     animation: loader3 0.6s infinite;
   }

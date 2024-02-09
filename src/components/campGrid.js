@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
+import Loader from './common/loader';
 import { Link } from 'react-router-dom';
-import CampCard from './common/campCard';
+import CampCard from './campCard';
 
-import '../styles/cardgrid.css';
+import '../styles/campGrid.css';
 
 async function fetchDataFromFirestore() {
     const querySnapshot = await getDocs(collection(db, "campgrounds"))
@@ -14,50 +15,49 @@ async function fetchDataFromFirestore() {
         data.push({ id: doc.id, ...doc.data()});
     });
     return data;
+    
 }
 
-const CampGrid = () => {
+const CampGrid = ({ campgrounds, limit }) => {
 
     const [campgroundData, setCampgroundData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const displayedItems = campgroundData.slice(0, limit);
 
     useEffect(() => {
         async function fetchData() {
             const data = await fetchDataFromFirestore();
             setCampgroundData(data);
+            setIsLoading(false);
         }
         fetchData();
+        
     }, []);
 
-    function shuffle(a) {
-        var j, x, i;
-        for (i = a.length - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            x = a[i];
-            a[i] = a[j];
-            a[j] = x;
-        }
-        return a;
-    } 
-
+    if (isLoading) return <Loader />;
 
     return (
-        <div className="container card-grid-wrap">
+        <>
             
             {campgroundData[0] ? (
-                <div id="cardGrid">
-                    {shuffle(Array.from(campgroundData)).slice(0, 4).map((campground) => (
-                    <Link to={`/campground/${campground.id}`} key={campground.id}>
-                        <CampCard
-                            id={campground.id}
-                            image={campground.images ? campground.images[0] : '../assets/images/defaultImg.jpg'}
-                            name={campground.name}
-                            priceRange={campground.priceRange}
-                        />
-                    </Link>
-                ))}</div>
+                <div id="campGrid">
+                    <div className="card-grid-wrap">
+                        {displayedItems.map((campground, index) => (
+                            <Link to={`/campground/${campground.id}`} key={campground.id} className="camp-link">
+                                <CampCard
+                                    key={index}
+                                    id={campground.id}
+                                    image={campground.images ? campground.images[0] : '../assets/images/defaultImg.jpg'}
+                                    name={campground.name}
+                                    priceRange={campground.priceRange}
+                                />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             ) : (<p>There are no campgrounds currently listed.</p>)}
             
-        </div>
+        </>
     );
 };
 

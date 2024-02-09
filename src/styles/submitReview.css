@@ -5,3 +5,7 @@
 .submit-review-content {
     border-radius: .8em;
 }
+
+#submitReview hr {
+    margin: 0 0 2em 0;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from '../hooks/rating'
 import getTimeDifference from '../hooks/getTimeDifference';
 import '../styles/review.css';
 
@@ -13,9 +14,12 @@ const Review = ({ review }) => {
                     <img src={review.profilePic} alt={review.username} />
                 </div>
                 <div className="user-details">
-                    <span className="user-name ">{review.username}</span>
-                    <span className="user-location">{ review.userLocation ? (review.userLocation) : (<div></div>) }</span>
-                    <span className="rating">{review.rating}</span> <span className="review-time">{timeDifference}</span>
+                    <div className="user">
+                        <span className="user-name ">{review.username}</span><span className="user-location">{ review.userLocation ? (review.userLocation) : (<div></div>) }</span>
+                    </div>
+                    <div className="rating">
+                        <Rating value={review.rating} />&bull;<span className="review-time"> {timeDifference} ago</span>
+                    </div>
                 </div>
             </div>
             <div className="user-review">

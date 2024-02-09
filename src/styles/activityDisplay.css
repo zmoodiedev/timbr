@@ -1,0 +1,107 @@
+#activityDisplay {
+    background-color: var(--light-gray);
+}
+
+.display-wrap {
+    padding: 10em var(--side-padding);
+    display: flex;
+}
+
+.display-l,
+.display-r {
+    flex: 1 50%;
+}
+
+.display-r {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-call {
+    padding: 0 4em;
+}
+
+.signup-call h2 {
+    color: var(--medium-green);
+}
+
+.activity-grid {
+    display: flex;
+    gap: .8em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.activity-box {
+    flex: 1 25%;
+    min-height: 9em;
+    background-color: var(--medium-green);
+    border-radius: .8em;
+    position: relative;
+}
+
+.activity-box::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--charcoal);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: .8em;
+    opacity: .3;
+    transition: all .3s ease-in-out;
+}
+
+.activity-box:hover {
+    cursor: pointer;
+}
+
+.activity-box:hover:before {
+    opacity: .8;
+}
+
+.activity-box h3 {
+    color: #fff;
+    text-shadow: #000 1px 0 10px;
+    position: absolute;
+    bottom: .3em;
+    left: .8em;
+}
+
+.activity-box.hiking,
+.activity-box.biking,
+.activity-box.swimming,
+.activity-box.canoeing,
+.activity-box.fishing,
+.activity-box.golfing {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter:saturate(80%);
+}
+
+.activity-box.hiking {
+    background-image: url('../assets/images/hiking_activity.jpg');
+}
+
+.activity-box.biking {
+    background-image: url('../assets/images/biking_activity.jpg');
+}
+
+.activity-box.swimming {
+    background-image: url('../assets/images/swimming_activity.jpg');
+}
+
+.activity-box.canoeing {
+    background-image: url('../assets/images/canoe_activity.jpg');
+}
+
+.activity-box.fishing {
+    background-image: url('../assets/images/fishing_activity.jpg');
+}
+
+.activity-box.golfing {
+    background-image: url('../assets/images/golfing_activity.jpg');
+}

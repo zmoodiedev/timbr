@@ -1,0 +1,24 @@
+.paginationButtons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: .8em;
+}
+
+.paginationButtons a {
+    padding: .5em .8em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.paginationDisabled a {
+    color: #ccc;
+    cursor: default;
+    display: none;
+}
+
+.paginationActive a {
+    background-color: var(--pink);
+    color: white;
+}

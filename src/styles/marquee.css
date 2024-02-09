@@ -1,28 +1,26 @@
 #marquee {
-    background-image: url('../assets/images/marquee-bg.png');
+    background-image: url('../assets/images/marquee-bg2.webp');
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
-    min-height: 800px;
+    background-attachment: fixed;
+    min-height: 80vh;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
     margin-top: calc(var(--header-height) * -1);
-    z-index: 0;
+    position: relative;
 }
 
 #marquee::before {
-    content:"";
-    display: block;
-    position: absolute;
-    z-index: 0;
-    height: 100%;
+    content: "";
     width: 100%;
-    background: rgb(41,50,7);
-    background: linear-gradient(180deg, var(--charcoal) 0%, rgba(0,0,0,0.30) 25%);
+    background-color: var(--charcoal);
+    min-height: 80vh;
+    position: absolute;
+    opacity: .7;
 }
 
 #mainTag {

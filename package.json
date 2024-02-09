@@ -16,12 +16,15 @@
     "google-map-react": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-paginate": "^8.2.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.20.0",
     "react-scripts": "^5.0.1",
+    "react-scroll-parallax": "^3.4.5",
     "react-slider": "^2.0.6",
     "reactjs-popup": "^2.0.6",
     "redux": "^5.0.1",
+    "swiper": "^11.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

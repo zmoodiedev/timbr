@@ -3,10 +3,10 @@ import Button from "./common/button";
 
 function AdSpaceCard() {
     return (
-        <div id="AdSpace">
+        <div id="adSpaceCard">
             <h3>Save on Supplies</h3>
             <p>Members get special deals on products and services from our partners!</p>
-            <Button className='simple-btn'>Check Them Out</Button>
+            <Button className='simple-btn'>Get the offers</Button>
         </div>
     );
 };

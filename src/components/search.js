@@ -7,7 +7,7 @@ function Search() {
     return (
         <div id='campSearch'>
                 <form id="search">
-                    <input type="search" id="query" name="q" placeholder="Search..." />
+                    <input type="search" id="query" name="q" placeholder="Search by campground name or location" />
                     <button className="search-btn"><FontAwesomeIcon icon={faSearch} /></button>
                 </form>
         </div>

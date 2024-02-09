@@ -1,17 +1,25 @@
-import React from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from 'react';
+import fetchUserReviewsCount from '../hooks/fetchReviewsCount';
 import '../styles/userCard.css';
 
 
 
-const UserCard = ({ profilePic, username, verified }) => {
+const UserCard = ({ profilePic, username, verified, reviews }) => {
+    const [reviewsCount, setReviewsCount] = useState(0);
 
     let imageUrl = profilePic;
     if (profilePic instanceof File) {
         imageUrl = URL.createObjectURL(profilePic);
     }
+
+    useEffect(() => {
+        const getCount = async () => {
+            const count = await fetchUserReviewsCount();
+            setReviewsCount(count);
+        };
+
+        getCount();
+    }, []);
 
     return (
         <div id='userCard'>
@@ -31,7 +39,7 @@ const UserCard = ({ profilePic, username, verified }) => {
                     </span>
                     <div className='user-stats'>
                         <div className='user-favourites'>8 Favorites</div>
-                        <div className='user-reviews'>2 Reviews</div>
+                        <div className='user-reviews'>{reviewsCount} Reviews</div>
                     </div>
                     
                 </div>

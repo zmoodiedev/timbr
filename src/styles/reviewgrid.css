@@ -1,8 +1,12 @@
-#reviewGrid {
+.review-grid {
+    margin-top: 2em;
+}
+
+.reviews {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2em;
+    gap: 2em;
+    padding: 2em 0;
 }
 
 .review {
@@ -36,10 +40,12 @@
 }
 
 .user-review {
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
+    width: 18ch;
+    word-break: break-all;
+}
+
+.user-review::after {
+content: "Full Review";
 }
 
 .user-review p {

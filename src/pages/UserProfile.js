@@ -104,6 +104,7 @@ const UserProfile = () => {
                     profilePic={userProfile.profilePic}
                     username={userProfile.username}
                     verified={userProfile.verified}
+                    reviewsCount={userProfile.reviewsCount}
                 />
                 <div className="user-info">
                   <UserInfo

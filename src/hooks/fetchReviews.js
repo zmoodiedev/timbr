@@ -3,7 +3,7 @@ import { db } from '../firebaseConfig';
 
 const fetchReviews = async (campgroundId) => {
     const reviewsRef = collection(db, "reviews");
-    const q = query(reviewsRef, where("campgroundId", "==", campgroundId));
+    const q = query(reviewsRef, where("campgroundId", "==", campgroundId));  
     
     try {
         const querySnapshot = await getDocs(q);

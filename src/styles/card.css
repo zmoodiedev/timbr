@@ -1,5 +1,5 @@
 .card {
-    border-radius: 10px;
+    border-radius: .8em;
     background: #ffffff;
     transition: all .2s ease-in-out;
     box-shadow:  14px 14px 28px #e3e3e3,
@@ -13,43 +13,40 @@
                  -7px -7px 28px #ffffff;
 }
 
+.card-content {
+    padding: 1em 1.4em;
+    text-align: center;
+}
+
 .card-content a {
     text-decoration: none;
 }
 
 .card img.card-feature {
     width: 100%;
-    border-radius: 6px 6px 0 0;
-    height: 180px;
+    border-radius: .8em .8em 0 0;
+    height: 200px;
     object-fit: cover;
     object-position: center;
 }
 
-.card-content {
-    padding: 8px 12px 12px 12px;
-    position: relative;
+.card .category {
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 500;
+    margin-bottom: .3em;
+    display: block;
 }
 
 .card .name {
     display: block;
-    font-size: 1em;
+    font-size: 1.2em;
+    line-height: 1.25em;
     font-weight: 700;
 }
 
-.card .distance {
-    display: block;
-    font-size: .9em;
-}
-
-.card .rating {
-    font-size: 0.9em;
-    font-weight: 600;
-    float: right
-}
-
-.card .rating .star {
-    width: 14px;
-    height: 14px;
+.card-icon {
+    color: var(--medium-green)
 }
 
 .card .rating .star path {
@@ -57,10 +54,14 @@
 }
 
 .card .price {
-    display: block;
-    font-size: 1em;
-    font-weight: 700;
-    line-height: 1.6;
-    color: var(--medium-green);
-    padding: .8em 0 0 0;
+
+}
+
+.card-footer {
+    font-size: 1.1em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
 }

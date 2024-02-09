@@ -1,14 +1,14 @@
 import React from 'react';
 import AdSpaceCard from '../adSpaceCard';
-import CampingTipsCard from '../campingTipsCard';
+import TipsCard from '../tipsCard';
 import '../../styles/homeCards.css';
 
 
 function HomeCards() {
     return (
-        <div id="homeCards">
+        <div id="homeCards" className="container">
             <AdSpaceCard />
-            <CampingTipsCard />
+            <TipsCard />
         </div>
     );
 };

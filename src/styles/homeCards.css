@@ -2,15 +2,37 @@
     display: flex;
     justify-content: space-between;
     gap: 3em;
+    padding: 10em var(--side-padding);
+    position: relative;
 }
 
 #homeCards div {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#AdSpace {
-    padding: 3rem;
-    font-size: 1.3rem;
+#homeCards h3 {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+#adSpaceCard,
+#tipsCard {
+    padding: 3em;
+    background-position: center;
+    background-size: cover;
     background-color: var(--light-gray);
     border-radius: 8px;
+    color: #fff;
+}
+
+#adSpaceCard {
+    background-image: url('../assets/images/bg-fire.jpg');
+    
+}
+
+#tipsCard {
+    background-image: url('../assets/images/bg-supplies.jpg');
 }

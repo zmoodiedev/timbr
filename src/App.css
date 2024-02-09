@@ -24,21 +24,21 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-family: var(--secondary-font);
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--charcoal);
 }
 
 h2 {
   font-family: var(--secondary-font);
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--charcoal);
 }
 
 h3 {
   font-family: var(--primary-font);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--medium-green);
 }
@@ -51,8 +51,9 @@ h4 {
 }
 
 p {
-  line-height: 1.7rem;
+  line-height: 2rem;
   margin-bottom: 1.2rem;
+  font-size: 1.2rem;
 }
 
 a {
@@ -67,8 +68,16 @@ hr {
 }
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
 }
+
+.subhead {
+  display: block;
+  font-size: .6em;
+  font-weight: 400;
+  color: var(--pink);
+}
+
 
 .container {
   max-width: 1440px;
@@ -76,6 +85,10 @@ hr {
   margin-right: auto;
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
+}
+
+.sub-container {
+  max-width: 60%;
 }
 
 .page-container {
@@ -105,7 +118,7 @@ hr {
   display: flex;
 }
 
-.tmbr-ref {
+.highlight {
   color: var(--pink);
   font-family: var(--secondary-font);
   font-weight: 500;

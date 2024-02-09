@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import PaginatedContent from './common/PaginatedContent';
 import fetchReviews from '../hooks/fetchReviews';
+
+import Popup from 'reactjs-popup';
+import SubmitReview from './submitReview';
 import Loader from './common/loader';
 import Button from './common/button';
 import Review from './review';
 import '../styles/reviewgrid.css';
 
-const ReviewGrid = ({ campgroundId }) => {
+const ReviewGrid = ({ campgroundId, review }) => {
     const [reviews, setReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -30,21 +34,32 @@ const ReviewGrid = ({ campgroundId }) => {
     if (isLoading) return <Loader />;
 
     return (
-        <div id="reviewGrid">
-        { (reviews.length > 0) ? (
-            <>
-                {reviews.map(review => (
-                    <Review key={review.id} username={review.username} review={review} />
-                ))}
-            </>
-
-            ) : (
-                <div className="noReviews">
-                    <p>There are no reviews for this campground yet. Why not be the first?</p>
-                    <Button className="btn">Be number one!</Button>
+        <PaginatedContent
+            items={reviews}
+            itemsPerPage={4}
+            renderContent={(displayedReviews) => (
+                <div className="review-grid">
+        
+                    { (reviews.length > 0) ? (
+                        <>
+                            <div className="reviews">
+                                {displayedReviews.map(review => (
+                                    <Review key={review.id} username={review.username} review={review} className="review" />
+                                ))}
+                            </div>
+                        </>
+                    ) : (
+                        <div className="noReviews">
+                            <p>There are no reviews for this campground yet. Why not be the first?</p>
+                            <Popup trigger={<button className="btn">Submit a review</button>} position="center center" modal ={true} className="submit-review">
+                            <SubmitReview />
+                        </Popup>
+                        </div>
+                    )}
+            
                 </div>
             )}
-        </div>
+        />
     );
 };
 

@@ -1,0 +1,17 @@
+.rating {
+    display: inline-flex;
+    gap: .6em;
+    font-size: .8em;
+    font-weight: 600;
+    color: var(--medium-green);
+}
+
+.user-details {
+    display: flex;
+    justify-content: center;
+}
+
+.user {
+    display: inline-flex;
+    gap: .3em;
+}

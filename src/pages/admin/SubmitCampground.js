@@ -109,7 +109,7 @@ export default function SubmitCampground() {
                 <div className="cg-submit-l">
                     <img src={timbrIcon} alt="tmbr Logo" className="tmbr-icon" />
                     <h1>Submit a Campground</h1>
-                    <p>Have a hidden gem or a favorite spot? We're always looking to grow our collection of amazing campgrounds. Share details about your favorite camping locations and help other adventurers discover new places to explore. Submitting is easy – just fill in the information here. Whether it's a well-known park or an off-the-beaten-path escape, your contributions make <span className="tmbr-ref">tmbr</span> the go-to resource for outdoor enthusiasts like you!</p>
+                    <p>Have a hidden gem or a favorite spot? We're always looking to grow our collection of amazing campgrounds. Share details about your favorite camping locations and help other adventurers discover new places to explore. Submitting is easy – just fill in the information here. Whether it's a well-known park or an off-the-beaten-path escape, your contributions make <span className="highlight">tmbr</span> the go-to resource for outdoor enthusiasts like you!</p>
                 </div>
                 <div className="cg-submit-r">
                 
@@ -185,7 +185,7 @@ export default function SubmitCampground() {
                                 minDistance={10}
                             />
 
-                            <div>Selected range: <span class="dol">$</span>{campground.priceRange[0]} - <span class="dol">$</span>{campground.priceRange[1]}</div>
+                            <div>Selected range: <span className="dol">$</span>{campground.priceRange[0]} - <span className="dol">$</span>{campground.priceRange[1]}</div>
                         </div>
 
                         <div className="form-group split">

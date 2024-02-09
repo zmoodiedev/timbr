@@ -3,6 +3,8 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { loginUser, setLoading } from './utilities/UserSlice';
 import { auth } from './firebaseConfig';
+import { useSelector } from 'react-redux';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import Header from './components/layout/header';
 import HeaderHome from './components/layout/headerHome';
 import Home from './pages/Home';
@@ -50,6 +52,7 @@ function HeadlessLayout() {
 function App() {
 
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.data.user.user);
   
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -70,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+      <ParallaxProvider>
         <Routes>
           <Route path="/" element={<HomeLayout />}>
             <Route index element={<Home />}/>
@@ -84,12 +88,13 @@ function App() {
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
             <Route path="/auth" element={<Authentication />}>
-              <Route path="signup" element={<SignUp />} />
+              <Route path="signup" element={<SignUp />}/>
               <Route path="login" element={<Login />} />
             </Route>
             
           </Route>
         </Routes>
+      </ParallaxProvider>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+#campGrid {
+    padding: 2em 0;
+}
+
+#campGrid h2 {
+    margin-bottom: 1em;
+}
+
+.card-grid-wrap {
+    display: flex;
+    gap: 3em;
+}
+    
+.card-grid-wrap>a {
+    flex: 1 1;
+}
