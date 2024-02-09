@@ -74,16 +74,13 @@ const Carousel = ({ limit }) => {
                             onSwiper={(swiper) => console.log(swiper)}
                         >
                                 {campgroundData.map((campground, index) => (
-                                    <SwiperSlide>
-                                        <Link to={`/campground/${campground.id}`} key={campground.id} className="camp-link">
-                                            <CampCard
-                                                key={index}
-                                                id={campground.id}
-                                                image={campground.images ? campground.images[0] : '../assets/images/defaultImg.jpg'}
-                                                name={campground.name}
-                                                priceRange={campground.priceRange}
-                                            />
-                                        </Link>
+                                    <SwiperSlide key={index}>
+                                        <CampCard
+                                            id={campground.id}
+                                            images={campground.images}
+                                            name={campground.name}
+                                            priceRange={campground.priceRange}
+                                        />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as filledStar, faDollarSign as dollarSign, faTents as tents } from '@fortawesome/free-solid-svg-icons';
 import placeholder from '../assets/images/defaultImg.jpg';
@@ -10,21 +10,34 @@ import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
 
-function CampCard({id, image, name, priceRange}) {
+function CampCard({id, images, name, priceRange}) {
 
     return (
         <div className="card" key={id}>
             <div className="card-top">
-            <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-                { image ? (
-                    <SwiperSlide><img src={image} alt={`Campground ${name}`} className="card-feature" /></SwiperSlide>
+            <Swiper
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                {images && images.length > 0 ? (
+                    images.map((img, index) => (
+                        <SwiperSlide key={index}>
+                            <img src={img} alt={`Campground ${name}`} className="card-feature" />
+                        </SwiperSlide>
+                    ))
                 ) : (
-                    <SwiperSlide><img src={placeholder} alt={`Campground ${name}`} className="card-feature" /></SwiperSlide>
+                    <SwiperSlide>
+                        <img src={placeholder} alt={`Campground ${name}`} className="card-feature" />
+                    </SwiperSlide>
                 )}
             </Swiper>
                 
             </div>
             <div className="card-content">
+            <Link to={`/campground/${id}`} key={id} className="camp-link">
                 <div className="camp-details">
                     <span className="category">Glamping</span>
                     <span className="name">{name}</span>
@@ -42,6 +55,7 @@ function CampCard({id, image, name, priceRange}) {
                     <div className="rating"><FontAwesomeIcon className="card-icon star" icon={filledStar} /> 4.6</div>
                     
                 </div>
+            </Link>
             </div>
         </div>
     );
