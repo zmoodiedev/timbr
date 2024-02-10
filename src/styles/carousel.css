@@ -29,25 +29,25 @@
 }      
 
 
-.swiper .swiper-button-prev, .swiper .swiper-rtl .swiper-button-next {
-    left: 0;
-    right: auto;
-    padding: 0 var(--swiper-navigation-sides-offset, 30px);
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-}
-
-.swiper .swiper-button-next, .swiper .swiper-rtl .swiper-button-prev {
-    right: 0;
-    left: auto;
-    padding: 0 var(--swiper-navigation-sides-offset, 30px);
-    background: rgb(255,255,255);
-    background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);   
-}
-
-.swiper .swiper-button-prev,
-.swiper .swiper-button-next {
+.camp-carousel .swiper-button-prev,
+.camp-carousel .swiper-button-next {
     color: var(--pink);
     height: 100%;
     top: 0;
+    margin: 0;
+}
+
+.camp-carousel .swiper-button-prev::after,
+.camp-carousel .swiper-button-next::after
+{
+    width: 30px;
+    height: 30px;
+    background-color: var(--charcoal);
+    color: #fff;
+    border-radius: 50%;
+    font-size: .6em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

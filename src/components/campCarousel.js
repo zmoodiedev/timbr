@@ -72,6 +72,7 @@ const Carousel = ({ limit }) => {
                             }}
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
+                            className="camp-carousel"
                         >
                                 {campgroundData.map((campground, index) => (
                                     <SwiperSlide key={index}>

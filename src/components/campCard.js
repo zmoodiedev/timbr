@@ -8,7 +8,7 @@ import '../styles/card.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 function CampCard({id, images, name, priceRange}) {
 
@@ -16,11 +16,12 @@ function CampCard({id, images, name, priceRange}) {
         <div className="card" key={id}>
             <div className="card-top">
             <Swiper
+                navigation={true}
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Pagination]}
-                className="mySwiper"
+                modules={[Pagination, Navigation]}
+                className="image-carousel"
             >
                 {images && images.length > 0 ? (
                     images.map((img, index) => (
