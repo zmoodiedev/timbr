@@ -10,9 +10,10 @@ import Home from './pages/Home';
 import Authentication from './authentication/Authentication';
 import SignUp from './authentication/SignUp';
 import Login from './authentication/Login';
-import CampingTips from './pages/CampingTips';
 import Explore from './pages/Explore';
 import SubmitCampground from './pages/admin/SubmitCampground';
+import CampingTips from './pages/CampingTips';
+import SubmitTip from './pages/admin/SubmitTip';
 import UserProfile from './pages/UserProfile';
 import Campground from './pages/Campground';
 import Footer from './components/layout/footer';
@@ -83,6 +84,7 @@ function App() {
             <Route path='/user/:username' element={<UserProfile />} />
             <Route path="/campground/:campgroundId" element={<Campground />} />
             <Route path="/camping-tips/" element={<CampingTips />} />
+            <Route path="/submit-a-tip/" element={<SubmitTip />} />
             <Route path='*' element={<NotFound />}/>      
           </Route>
           <Route path="/" element={<HeadlessLayout />}>

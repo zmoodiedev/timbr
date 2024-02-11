@@ -2,6 +2,8 @@ import React, { memo, useEffect, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
 import { EDITOR_JS_TOOLS } from "./tools";
 
+import '../styles/editor.css';
+
 const Editor = ({ data, onChange, editorblock }) => {
   const ref = useRef();
   //Initialize editorjs
