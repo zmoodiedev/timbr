@@ -4,7 +4,6 @@ import { db } from "../firebaseConfig";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Loader from './common/loader';
-import { Link } from 'react-router-dom';
 import CampCard from './campCard';
 
 import '../styles/carousel.css';

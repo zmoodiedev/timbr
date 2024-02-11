@@ -6,7 +6,7 @@ import Button from './common/button';
 import Rating from '../hooks/rating';
 import '../styles/submitReview.css';
 
-const SubmitReview = ({}) => {
+const SubmitReview = () => {
 
     const { name } = useParams();
 

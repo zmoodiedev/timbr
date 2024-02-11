@@ -3,7 +3,6 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { loginUser, setLoading } from './utilities/UserSlice';
 import { auth } from './firebaseConfig';
-import { useSelector } from 'react-redux';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Header from './components/layout/header';
 import HeaderHome from './components/layout/headerHome';
@@ -52,7 +51,7 @@ function HeadlessLayout() {
 function App() {
 
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.data.user.user);
+
   
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -80,10 +79,10 @@ function App() {
           </Route>
           <Route path="/" element={<MainLayout />}>
             <Route path="/explore" element={<Explore />} />
-            <Route path="/camping-tips" element={<CampingTips />} />
             <Route path="/submit-campground" element={<SubmitCampground />} />
             <Route path='/user/:username' element={<UserProfile />} />
             <Route path="/campground/:campgroundId" element={<Campground />} />
+            <Route path="/camping-tips/" element={<CampingTips />} />
             <Route path='*' element={<NotFound />}/>      
           </Route>
           <Route path="/" element={<HeadlessLayout />}>

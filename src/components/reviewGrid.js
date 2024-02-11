@@ -5,7 +5,6 @@ import fetchReviews from '../hooks/fetchReviews';
 import Popup from 'reactjs-popup';
 import SubmitReview from './submitReview';
 import Loader from './common/loader';
-import Button from './common/button';
 import Review from './review';
 import '../styles/reviewgrid.css';
 
