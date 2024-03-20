@@ -2,7 +2,7 @@
     overflow: hidden;
   }
   
-  .card-grid-wrap {
+.carousel-grid-wrap {
     display: flex;
     transition: transform 0.5s ease; /* Adjust based on your needs */
 }
@@ -19,22 +19,30 @@
     margin-right: 16px; /* Space between cards */
 }
 
-.card-grid-wrap .swiper {
-    padding: 4em;
+.carousel-grid-wrap .swiper {
     position: relative;
+    width: 100%;
 }
 
 .card-top .swiper {
     padding: 0;
 }      
 
+.camp-carousel .swiper-button-prev {
+    left: 0
+}
 
-.camp-carousel .swiper-button-prev,
-.camp-carousel .swiper-button-next {
-    color: var(--pink);
+.camp-carousel .swiper-button-next  {
+    right: 0
+}
+
+div:not(.card) .camp-carousel .swiper-button-prev,
+div:not(.card) .camp-carousel .swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
     top: 0;
     margin: 0;
+    width: 50px;
 }
 
 .camp-carousel .swiper-button-prev::after,
@@ -42,11 +50,11 @@
 {
     width: 30px;
     height: 30px;
-    background-color: var(--charcoal);
-    color: #fff;
+    background-color: var(--medium-yellow);
+    color: var(--dark-green);
     border-radius: 50%;
     font-size: .6em;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;

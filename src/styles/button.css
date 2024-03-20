@@ -1,5 +1,5 @@
 button {
-    font-family: var(--main-font);
+    font-family: var(--secondary-font);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -7,15 +7,12 @@ button {
 }
 
 button.btn {
-
     align-items: center;
     appearance: none;
-    background-color: var(--light-gray);
-    border-radius: 4px;
+    background-color: var(--medium-yellow);
     border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,var(--medium-gray) 0 -3px 0 inset;
     box-sizing: border-box;
-    color: #36395A;
+    color: var(--dark-green);
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
@@ -33,6 +30,7 @@ button.btn {
     white-space: nowrap;
     will-change: box-shadow,transform;
     font-size: 1em;
+    border-radius: 50px;
 }
     
 button.btn:focus {
@@ -49,13 +47,13 @@ button.btn:active {
     transform: translateY(2px);
 }
 
-button.btn-pink {
-    background-color: var(--pink);
-    color: #fff;
+button.btn-secondary {
+    background-color: var(--teal);
+    color: var(--charcoal);
     border: none;
-    border-radius: 8px;
-    text-transform: uppercase;
-    font-size: .6em;
+    font-size: .8em;
+    font-weight: 700;
+    padding: 1.2em 1.6em;
 }
 
 button.simple-btn {
@@ -63,7 +61,6 @@ button.simple-btn {
     color: #fff;
     width: fit-content;
     padding: 1em 1.6em;
-    border-radius: .4em;
     transition: .3s all ease-in-out;
 }
 

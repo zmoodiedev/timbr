@@ -1,7 +1,7 @@
 #campSearch {
     min-width: 300px;
-    max-width: 600px;
-    width: 80%;
+    max-width: 500px;
+    width: 100%;
   }
 
 #search {
@@ -21,8 +21,8 @@
 }
 
 .search-btn {
-    background-color: var(--pink);
-    color: #fff;
+    background-color: var(--medium-yellow);
+    color: var(--dark-green);
     border-radius: 0 50px 50px 0;
     font-weight: 600;
     box-shadow: none;

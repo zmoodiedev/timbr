@@ -1,7 +1,16 @@
 :root {
     --main-font: 'Noto Sans', sans-serif;
-    --secondary-font: 'Merriweather', serif;
-    --charcoal: #36454F;
+    --secondary-font: 'Cabin', sans-serif;
+    --white: #fff;
+    --light-yellow: #FED946;
+    --medium-yellow: #CDBA37;
+    --yellow-green: #909036;
+    --light-green: #396E65;
+    --dark-green: #051616;
+    
+    
+    
+    /*--charcoal: #36454F;
     --light-pink: #f64263;
     --pink: #F52E52;
     --dark-pink:#dd3b59;
@@ -9,8 +18,9 @@
     --medium-green: #787f5d;
     --light-green: #d3d9bf;
     --beige: #c8c2ac;
-    --medium-gray: #b2b7bd;
-    --light-gray: #e0e1dc;
+    --teal: #3bddbf;
+    --medium-gray: #8794a4;
+    --light-gray: #e0e1dc;*/
     --side-padding: 80px;
     --header-height: 80px;
     --tmbr-shadow: 14px 14px 28px #e3e3e3, -14px -14px 28px #ffffff;

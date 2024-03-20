@@ -1,4 +1,5 @@
 .home-body {
     position: relative;
-    background-color: #fff;
+    background-color: var(--dark-green);
+    color: var(--white);
 }

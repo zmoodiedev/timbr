@@ -10,7 +10,7 @@ import '../styles/reviewgrid.css';
 
 const ReviewGrid = ({ campgroundId, review }) => {
     const [reviews, setReviews] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const getReviews = async () => {

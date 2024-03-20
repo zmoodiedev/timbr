@@ -1,49 +1,79 @@
 #marquee {
-    background-image: url('../assets/images/marquee-bg2.webp');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 80vh;
-    text-align: center;
+    min-height: 70vh;
+    background-color: var(--dark-green);
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     margin-top: calc(var(--header-height) * -1);
     position: relative;
 }
 
-#marquee::before {
-    content: "";
+.marquee-tag {
     width: 100%;
-    background-color: var(--charcoal);
-    min-height: 80vh;
-    position: absolute;
-    opacity: .7;
+    display: flex;
+}
+
+.marquee-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #mainTag {
     font-family: var(--secondary-font);
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: .9em;
     color: #fff;
     position: relative;
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 1);
     z-index: 1;
+    margin-bottom: .2em;
 }
 
 #secondaryTag {
     font-family: var(--primary-font);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #fff;
     position: relative;
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 1);
     z-index: 1;
+    margin-bottom: .8em;
 }
 
 #campSearch {
     position: relative;
     z-index: 2;
+}
+
+.marquee-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+.hiker {
+    width: 500px;
+    z-index: 1;
+    margin-left: -150px;
+}
+
+#campBlob {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: -575px;
+    right: 0;  
+    background-image: url(../assets/images/marquee-bg2.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url(../assets/images/blob.png);
+    mask-image: url(../assets/images/blob.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    opacity: .6;
 }

@@ -43,29 +43,28 @@ const Carousel = ({ limit }) => {
         <>
             {campgroundData[0] ? (
                 <div id="campGrid">
-                    <div className="card-grid-wrap">
+                    <div className="carousel-grid-wrap">
                         <Swiper
                             modules={[Navigation]}
                             navigation
                             loop={true}
-                            spaceBetween={50}
-                            slidesPerView={1}
+                            slidesPerView={20}
                             breakpoints={{
                                 0: {
                                     slidesPerView: 1,
                                     spaceBetween: 20,
                                 },
                                 768: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 40,
+                                    slidesPerView: 3,
+                                    spaceBetween: 10,
                                 },
                                 1024: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 50,
+                                    slidesPerView: 5,
+                                    spaceBetween: 5,
                                 },
                                 1440: {
-                                    slidesPerView: 5,
-                                    spaceBetween: 50,
+                                    slidesPerView: 6,
+                                    spaceBetween: 10,
                                 },
 
                             }}

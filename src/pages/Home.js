@@ -1,6 +1,6 @@
 import React from 'react';
 import Marquee from '../components/marquee';
-import FeaturedCampgrounds from '../components/featuredCampgrounds';
+import Suggestions from '../components/suggestions';
 import ActivityDisplay from '../components/activityDisplay';
 import HomeCards from '../components/layout/homeCards';
 
@@ -13,8 +13,7 @@ const Home = () => {
             <Marquee />
 
             <div className="home-body">
-            
-                <FeaturedCampgrounds />
+                <Suggestions />
                 <ActivityDisplay />
                 <HomeCards />
             </div>

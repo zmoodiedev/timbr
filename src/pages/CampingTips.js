@@ -5,9 +5,10 @@ import { db } from "../firebaseConfig";
 import Loader from '../components/common/loader';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/button';
-import Tip from '../components/tip';
+import TipCard from '../components/tipCard';
 
-import '../styles/tips.css';
+import '../styles/campingTips.css'
+import '../styles/tipsList.css';
 
 
 async function fetchDataFromFirestore() {
@@ -41,29 +42,33 @@ const CampingTips = () => {
     if (isLoading) return <Loader />;
 
     return (
-        <div className='page-container'>
-            <h1>Camping Tips</h1>
-            {user && (
-                    <>
-                        <Link to={`/submit-a-tip`}>
-                            <Button className="btn">Submit a Tip</Button>
-                        </Link>
-                    </>
+        <>
+            <div className="page-header tips">
+                <h1>Camping Tips</h1>
+            </div>
+            <div className='page-container'>
+                
+                {user && (
+                        <>
+                            <Link to={`/submit-a-tip`}>
+                                <Button className="btn">Submit a Tip</Button>
+                            </Link>
+                        </>
+                    )}
+                {tipsData[0] ? (
+                    <div className="tips-grid">
+                        {tipsData.map((tip, index) => (
+                            <TipCard
+                                key={index}
+                                title={tip.Title}
+                            /> 
+                        ))}
+                    </div>
+                ) : (
+                    <p>There are no tips to be found.</p>
                 )}
-            {tipsData[0] ? (
-                <div className="tips-grid">
-                    {tipsData.map((tip, index) => (
-                        <Tip
-                            key={index}
-                            title={tip.Title}
-                            body={tip.Body}
-                        /> 
-                    ))}
-                </div>
-            ) : (
-                <p>There are no tips to be found.</p>
-            )}
-        </div>    
+            </div>    
+        </>
     );
 };
 

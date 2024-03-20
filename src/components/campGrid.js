@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import Loader from './common/loader';
-import { Link } from 'react-router-dom';
 import CampCard from './campCard';
 
 import '../styles/campGrid.css';
@@ -43,7 +42,6 @@ const CampGrid = ({ campgrounds, limit }) => {
                 <div id="campGrid">
                     <div className="card-grid-wrap">
                         {displayedItems.map((campground, index) => (
-                            <Link to={`/campground/${campground.id}`} key={campground.id} className="camp-link">
                                 <CampCard
                                     key={index}
                                     id={campground.id}
@@ -51,7 +49,6 @@ const CampGrid = ({ campgrounds, limit }) => {
                                     name={campground.name}
                                     priceRange={campground.priceRange}
                                 />
-                            </Link>
                         ))}
                     </div>
                 </div>

@@ -37,7 +37,7 @@ function Navigation({profilePic}) {
                 {user ?
                     <><Link to={`/user/${user.username}`} className="username"><img src={user.imageUrl} alt={user.username} /></Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
                     <>
-                        <Link to="/auth/login">Login</Link> | <Link to="/auth/signup">Sign Up</Link>
+                        <Link to="/auth/login" className="login-btn">Login</Link> <Link to="/auth/signup" className="register-btn">Register</Link>
                     </>
                 }
             </div>

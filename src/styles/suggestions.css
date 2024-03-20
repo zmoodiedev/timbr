@@ -1,0 +1,18 @@
+.suggestions {
+    background-color: var(--white);
+    padding: 8rem 0;
+    position: relative;
+}
+
+.suggestions h2 {
+    color: var(--dark-green);
+    margin-bottom: 3rem;
+}
+
+.suggestions .carousel-grid-wrap  {
+    margin-bottom: 3rem;
+}
+
+.suggestions .bottom-divider {
+    background-color: var(--dark-green);
+}

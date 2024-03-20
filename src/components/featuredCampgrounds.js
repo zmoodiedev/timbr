@@ -12,7 +12,7 @@ const FeaturedCampgrounds = () => {
                     <p>Discover your perfect camping spot with <span className="highlight">timbr</span>. From rugged backcountry retreats to serene lakeside escapes, we connect you to unforgettable outdoor experiences. Browse our curated gallery of available campgrounds and start your next adventure today.</p>
                 </div>
             </div>
-            <Carousel limit={20} />
+            <Carousel limit={10} />
         </div>
     )
 }

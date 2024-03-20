@@ -1,5 +1,5 @@
 footer {
-    background-color: var(--charcoal);
+    background-color: var(--dark-green);
     color: #fff;
     font-size: .8em;
     border-top: 1px solid rgba(255, 255, 255, .2);
@@ -41,7 +41,7 @@ footer ul li {
 
 #megaFooter .logo a {
     font-size: 2rem;
-    color: var(--pink);
+    color: var(--medium-yellow);
     font-weight: 600;
 }
 

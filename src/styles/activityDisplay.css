@@ -1,5 +1,6 @@
 #activityDisplay {
     background-color: var(--light-gray);
+    position: relative;
 }
 
 .display-wrap {

@@ -1,12 +1,23 @@
 import React from 'react';
-import CampGrid from './campGrid';
-import '../styles/cardgrid.css';
+import Carousel from './campCarousel';
+import BottomDivider from './common/bottomDivider';
+import { Link } from 'react-router-dom';
+import Button from '../components/common/button';
+import '../styles/suggestions.css';
 
 function Suggestions() {
     return (
-        <div className="container card-grid-wrap">
-            <h2>Suggested Destinations</h2>
-            <CampGrid />
+        <div className="suggestions">
+            <div className="container">
+                <h2>Suggested Destinations</h2>
+            </div>
+            
+            <Carousel />
+            
+            <div className="container">
+                <Link to="/explore"><Button className="btn explore-more">Browse more campgrounds</Button></Link>
+            </div>
+            <BottomDivider />
         </div>
     );
 };

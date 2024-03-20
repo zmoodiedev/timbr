@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as filledStar, faDollarSign as dollarSign, faTents as tents } from '@fortawesome/free-solid-svg-icons';
 import placeholder from '../assets/images/defaultImg.jpg';
-import '../styles/card.css';
+import '../styles/campCard.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -14,29 +14,6 @@ function CampCard({id, images, name, priceRange}) {
 
     return (
         <div className="card" key={id}>
-            <div className="card-top">
-            <Swiper
-                navigation={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Pagination, Navigation]}
-                className="image-carousel"
-            >
-                {images && images.length > 0 ? (
-                    images.map((img, index) => (
-                        <SwiperSlide key={index}>
-                            <img src={img} alt={`Campground ${name}`} className="card-feature" />
-                        </SwiperSlide>
-                    ))
-                ) : (
-                    <SwiperSlide>
-                        <img src={placeholder} alt={`Campground ${name}`} className="card-feature" />
-                    </SwiperSlide>
-                )}
-            </Swiper>
-                
-            </div>
             <div className="card-content">
             <Link to={`/campground/${id}`} key={id} className="camp-link">
                 <div className="camp-details">
@@ -57,6 +34,29 @@ function CampCard({id, images, name, priceRange}) {
                     
                 </div>
             </Link>
+            </div>
+            <div className="card-img">
+                <Swiper
+                    navigation={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination, Navigation]}
+                    className="image-carousel"
+                >
+                    {images && images.length > 0 ? (
+                        images.map((img, index) => (
+                            <SwiperSlide key={index}>
+                                <img src={img} alt={`Campground ${name}`} className="card-feature" />
+                            </SwiperSlide>
+                        ))
+                    ) : (
+                        <SwiperSlide>
+                            <img src={placeholder} alt={`Campground ${name}`} className="card-feature" />
+                        </SwiperSlide>
+                    )}
+                </Swiper>
+                
             </div>
         </div>
     );

@@ -1,13 +1,19 @@
 .navbar {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px var(--side-padding);
+    gap: 4em
+}
+
+
+.navbar .main-nav {
+  flex: 2;
 }
 
 .navbar .logo a {
-  color: var(--pink);
+  font-size: 1.2rem;
+  color: var(--medium-yellow);
   font-weight: 600;
 }
 
@@ -45,9 +51,25 @@
 }
 
 .navbar .auth {
+  flex: 1;
+  display: inline-flex;
+  justify-content: flex-end;
   font-size: .8rem;
   font-weight: 600;
   text-transform: uppercase;
+  gap: 1em;
+}
+
+.navbar .auth .register-btn,
+.navbar .auth .login-btn {
+  border-radius: 50px;
+  padding: 8px 20px;
+}
+
+.navbar .auth .register-btn {
+  background-color: var(--medium-yellow);
+  color: var(--dark-green);
+
 }
 
 nav .menu-btn {

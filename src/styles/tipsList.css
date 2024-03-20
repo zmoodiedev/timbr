@@ -1,0 +1,39 @@
+.tips-grid {
+    margin: 5em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 3.5em;
+}
+
+.tipCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tipCard img {
+    width: 100%;
+    border-radius: .4em;
+}
+
+.tipCard .category {
+    display: inline-block;
+    font-family: var(--secondary-font);
+    font-size: .7em;
+    font-weight: 700;
+    background-color: var(--charcoal);
+    color: #fff;
+    margin: 1em 0;
+    padding: .5em .8em;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.tip-title {
+    margin-bottom: 1.2em;
+}
+
+.tipCard .btn {
+    display: block;
+    width:fit-content;
+}
