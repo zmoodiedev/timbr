@@ -19,6 +19,6 @@
 }
 
 .paginationActive a {
-    background-color: var(--pink);
+    background-color: var(--light-yellow);
     color: white;
 }

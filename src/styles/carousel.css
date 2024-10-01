@@ -38,7 +38,6 @@
 
 div:not(.card) .camp-carousel .swiper-button-prev,
 div:not(.card) .camp-carousel .swiper-button-next {
-    background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
     top: 0;
     margin: 0;
@@ -50,10 +49,11 @@ div:not(.card) .camp-carousel .swiper-button-next {
 {
     width: 30px;
     height: 30px;
-    background-color: var(--medium-yellow);
+    background-color: var(--white);
+    opacity: .7;
     color: var(--dark-green);
     border-radius: 50%;
-    font-size: .6em;
+    font-size: .8em;
     font-weight: 700;
     display: flex;
     justify-content: center;

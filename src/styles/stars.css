@@ -9,5 +9,5 @@
 
 .stars svg path{
     width: 15px;
-    fill: var(--medium-green);
+    fill: var(--light-green);
 }

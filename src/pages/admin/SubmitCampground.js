@@ -104,7 +104,7 @@ export default function SubmitCampground() {
 
     return (
         <div id="campSubmit">
-            <div className="page-container cg-submit-wrap">
+            <div className="cg-submit-wrap">
 
                 <div className="cg-submit-l">
                     <img src={timbrIcon} alt="tmbr Logo" className="tmbr-icon" />
@@ -172,7 +172,9 @@ export default function SubmitCampground() {
                         </div>
 
                         <div className="form-group">
+                            <label htmlFor="price-range">Price Range</label>
                             <ReactSlider
+                                name="price-range"
                                 className="horizontal-slider"
                                 thumbClassName="thumb"
                                 trackClassName="track"
@@ -180,7 +182,7 @@ export default function SubmitCampground() {
                                 onChange={handleSliderChange}
                                 ariaLabel={['Lower thumb', 'Upper thumb']}
                                 ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                                renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                                renderThumb={(props, state) => <div {...props}><div className="price-label">{state.valueNow}</div></div>}
                                 pearling
                                 minDistance={10}
                             />

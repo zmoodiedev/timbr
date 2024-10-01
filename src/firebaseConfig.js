@@ -6,6 +6,7 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyDTXN9SmZ0GlNlpyj34urOuyCFhxgYuzec",
   authDomain: "tmbr-bceec.firebaseapp.com",
+  databaseURL: "https://tmbr-cmp.firebaseio.com/",
   projectId: "tmbr-bceec",
   storageBucket: "tmbr-bceec.appspot.com",
   messagingSenderId: "84917962249",

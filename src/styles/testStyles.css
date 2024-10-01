@@ -35,8 +35,6 @@
     position: absolute;
     bottom: 0;
     z-index: 2;
-    background: rgb(54,69,79);
-    background: linear-gradient(0deg, rgba(54,69,79,1) 70%, rgba(54,69,79,0) 100%);
   }
 
   .card-content .category,

@@ -10,7 +10,7 @@ import '../styles/marquee.css';
 function Marquee() {
     return (
         <div id="marquee">
-            <Parallax translateY={['300px', '275px']}>
+            <Parallax translateY={['200px', '275px']}>
                 <div id="campBlob"></div>
             </Parallax>
             <div className="marquee-tag container">

@@ -1,27 +1,26 @@
 import React from "react";
 import Button from "../components/common/button"
+import TopDivider from './common/topDivider';
+import ActivitiesBlob from "../assets/images/activities_blob.png";
+import { Parallax } from 'react-scroll-parallax';
 import { Link } from 'react-router-dom';
 import '../styles/activityDisplay.css';
 
 const ActivityDisplay = () => {
     return (
         <div id="activityDisplay">
+            <TopDivider />
             <div className="container display-wrap">
                 <div className="display-l">
-                    <div className="activity-grid">
-                        <div className="activity-box hiking"><h3>Hiking</h3></div>
-                        <div className="activity-box swimming"><h3>Swimming</h3></div>
-                        <div className="activity-box fishing"><h3>Fishing</h3></div>
-                        <div className="activity-box biking"><h3>Biking</h3></div>
-                        <div className="activity-box canoeing"><h3>Canoeing</h3></div>
-                        <div className="activity-box golfing"><h3>Golfing</h3></div>
-                    </div>
+                    <Parallax translateX={['-100px', '25px']}  speed={10}>
+                        <img src={ActivitiesBlob} alt="" />
+                    </Parallax>
                 </div>
                 <div className="display-r">
                     <div className="signup-call">
-                        <h2>Campgrounds For<br/>Every Type of Camper!</h2>
-                        <p>Keep track of your favorite camping spots, share your thoughts with other campers, and get discounts from our partners!</p>
-                        <Link to="/auth/signup"><Button className="btn">Sign up</Button></Link>
+                        <h2>When You Need <span className="brush">More</span><br/>Than Relaxation</h2>
+                        <p>From rugged back country retreats to serene lakeside escapes, we connect you to unforgettable outdoor experiences. Discover all sorts of options for your next adventure!</p>
+                        <Link to="/explore"><Button className="btn">Find your perfect adventure</Button></Link>
                     </div>
                 </div>
             </div>

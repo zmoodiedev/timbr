@@ -18,7 +18,6 @@ import UserProfile from './pages/UserProfile';
 import Campground from './pages/Campground';
 import Footer from './components/layout/footer';
 import NotFound from './pages/404';
-import CodeTest from './pages/CODETEST';
 import './index.css';
 import './styles/variables.css';
 
@@ -83,11 +82,10 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/submit-campground" element={<SubmitCampground />} />
             <Route path='/user/:username' element={<UserProfile />} />
-            <Route path="/campground/:campgroundId" element={<Campground />} />
+            <Route path="/campground/:id" element={<Campground />} />
             <Route path="/camping-tips/" element={<CampingTips />} />
             <Route path="/submit-a-tip/" element={<SubmitTip />} />
-            <Route path='*' element={<NotFound />}/> 
-            <Route path='/test' element={<CodeTest />}/>      
+            <Route path='*' element={<NotFound />}/>     
           </Route>
           <Route path="/" element={<HeadlessLayout />}>
             <Route path="/auth" element={<Authentication />}>

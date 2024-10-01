@@ -24,8 +24,8 @@ function Navigation({profilePic}) {
                 <Link to="/">tmbr</Link>
             </div>
             <ul className="main-nav">
-                <li><Link to="/explore">Explore</Link></li>
-                <li><Link to="/camping-tips">Camping Tips</Link></li>
+                <li><Link to="/explore" className="nav-item">Explore</Link></li>
+                <li><Link to="/camping-tips" className="nav-item">Camping Tips</Link></li>
                 <li>
                     {user ?
                         <Link to="/submit-campground">Submit a Campground</Link> :
@@ -35,7 +35,15 @@ function Navigation({profilePic}) {
             </ul>
             <div className="auth">
                 {user ?
-                    <><Link to={`/user/${user.username}`} className="username"><img src={user.imageUrl} alt={user.username} /></Link> | <Link className="logout__button" onClick={handleLogout}>Log Out</Link></> :
+                    <>
+                       <Link className="logout__button" onClick={handleLogout}>Log Out</Link>
+                        <nav id="userNav">
+                            <ul>
+                                <li><Link to={`/user/${user.username}`} className="username"><img src={user.imageUrl} alt={user.username} /></Link></li>
+                            </ul>
+                        </nav>
+                    </>
+                          :
                     <>
                         <Link to="/auth/login" className="login-btn">Login</Link> <Link to="/auth/signup" className="register-btn">Register</Link>
                     </>

@@ -12,7 +12,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--pink);
+    color: var(--light-yellow);
 }
 
 footer hr {
@@ -65,7 +65,7 @@ footer ul li {
 }
 
 .social a {
-    color: var(--pink);
+    color: var(--light-yellow);
     transition: color 0.3s ease-in-out;
 }
 

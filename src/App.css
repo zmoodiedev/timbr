@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-family: var(--secondary-font);
   font-size: 2.6rem;
-  color: var(--charcoal);
+  color: var(--dark-green);
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -37,7 +37,7 @@ h1 {
 h2 {
   font-family: var(--secondary-font);
   font-size: 1.7rem;
-  color: var(--charcoal);
+  color: var(--dark-green);
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -49,7 +49,7 @@ h3 {
   font-family: var(--primary-font);
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--medium-green);
+  color: var(--light-green);
 }
 
 h4 {
@@ -62,7 +62,7 @@ h4 {
 p {
   line-height: 1.7rem;
   margin-bottom: 1.2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 a {
@@ -84,11 +84,21 @@ img {
   min-height: 100vh;
 }
 
+.brush {
+  background-image: url(./assets/images/Brush.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+    background-position-y: bottom;
+  padding: 0 6px;
+  background-position-y: 98%;
+}
+
 .subhead {
   display: block;
   font-size: .6em;
   font-weight: 400;
-  color: var(--pink);
+  color: var(--light-yellow);
 }
 
 
@@ -105,10 +115,8 @@ img {
 }
 
 .page-container {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4rem var(--side-padding);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .container-sm {
@@ -136,7 +144,7 @@ img {
 }
 
 .highlight {
-  color: var(--pink);
+  color: var(--light-yellow);
   font-family: var(--secondary-font);
   font-weight: 500;
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from "../firebaseConfig";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import Loader from "../components/common/loader";
 import CampgroundHeader from "../components/campHeader";
 import CampPhotos from '../components/campPhotos';
@@ -17,24 +16,27 @@ import '../styles/campground.css';
 
 const Campground = () => {
 
-  const { campgroundId } = useParams();
+  const { id } = useParams();
   const [campground, setCampground] = useState(null);
   
 
   useEffect(() => {
     const fetchCampground = async () => {
-      const docRef = doc(db, "campgrounds", campgroundId);
-      const docSnap = await getDoc(docRef);
-
+      const db = getFirestore();
+      const campgroundRef = doc(db, "campgrounds", id);
+      
+      console.log(`Attempting to fetch campground with ID: ${id}`); // Log the ID being used
+      const docSnap = await getDoc(campgroundRef);
       if (docSnap.exists()) {
-        setCampground(docSnap.data());
+          console.log("Campground data:", docSnap.data()); // Log fetched data
+          setCampground(docSnap.data());
       } else {
-        <p>This campground does not exist.</p>
+          console.log("This campground does not exist.");
       }
-    };
+  };
 
     fetchCampground();
-  }, [campgroundId]);
+}, [id]);
 
   if (!campground) {
     return <Loader />;
@@ -68,7 +70,7 @@ const Campground = () => {
             </div>
             <hr />
             <h3>Reviews</h3>
-            <ReviewGrid campgroundId={campgroundId} />
+            <ReviewGrid campgroundId={id} />
           </div>
           <div className="cg-details-r">
           

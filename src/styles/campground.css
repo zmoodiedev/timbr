@@ -14,12 +14,12 @@
 
 .cg-interactions a.share {
     font-size: 1.2em;
-    color: var(--charcoal);
+    color: var(--dark-green);
 }
 
 .cg-interactions .favorite {
     font-size: 1.2em;
-    color: var(--pink);
+    color: var(--light-yellow);
     transition: all .2s ease-in-out;
     animation: pulse 1s 10;
 }

@@ -22,9 +22,19 @@ async function fetchDataFromFirestore() {
     
 }
 
-const Carousel = ({ limit }) => {
+const CampCarousel = ({ limit }) => {
     const [campgroundData, setCampgroundData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchData() {
+            const data = await fetchDataFromFirestore();
+            console.log(data); // Check what's being fetched
+            setCampgroundData(data);
+            setIsLoading(false);
+        }
+        fetchData();
+    }, []);
 
     useEffect(() => {
         async function fetchData() {
@@ -48,23 +58,24 @@ const Carousel = ({ limit }) => {
                             modules={[Navigation]}
                             navigation
                             loop={true}
-                            slidesPerView={20}
+                            centeredSlides={true}
+                            slidesPerView={2}
                             breakpoints={{
                                 0: {
                                     slidesPerView: 1,
                                     spaceBetween: 20,
                                 },
                                 768: {
-                                    slidesPerView: 3,
+                                    slidesPerView: 2,
                                     spaceBetween: 10,
                                 },
-                                1024: {
-                                    slidesPerView: 5,
-                                    spaceBetween: 5,
+                                992: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 20,
                                 },
                                 1440: {
-                                    slidesPerView: 6,
-                                    spaceBetween: 10,
+                                    slidesPerView: 5,
+                                    spaceBetween: 30,
                                 },
 
                             }}
@@ -75,6 +86,7 @@ const Carousel = ({ limit }) => {
                                 {campgroundData.map((campground, index) => (
                                     <SwiperSlide key={index}>
                                         <CampCard
+                                            key={index}
                                             id={campground.id}
                                             images={campground.images}
                                             name={campground.name}
@@ -92,4 +104,4 @@ const Carousel = ({ limit }) => {
         );
     };
 
-export default Carousel;
+export default CampCarousel;

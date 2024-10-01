@@ -45,7 +45,7 @@ const CampGrid = ({ campgrounds, limit }) => {
                                 <CampCard
                                     key={index}
                                     id={campground.id}
-                                    image={campground.images ? campground.images[0] : '../assets/images/defaultImg.jpg'}
+                                    images={campground.images ? campground.images : '../assets/images/defaultImg.jpg'}
                                     name={campground.name}
                                     priceRange={campground.priceRange}
                                 />

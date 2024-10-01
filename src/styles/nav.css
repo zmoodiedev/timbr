@@ -35,7 +35,20 @@
 }
 .navbar a {
     text-decoration: none;
-    color: var(--charcoal);
+    color: var(--white);
+}
+
+.navbar a:hover {
+  transition: all .2s ease-in-out;
+}
+
+.navbar .nav-item {
+  padding-bottom: .3rem;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar .nav-item:hover {
+  border-bottom-color: var(--medium-yellow);
 }
 
 .header-home {
@@ -47,7 +60,7 @@
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .navbar .auth {

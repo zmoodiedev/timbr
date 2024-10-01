@@ -16,7 +16,9 @@ const PaginatedContent = ({ items, itemsPerPage, renderContent }) => {
     return (
         <div>
             {renderContent(displayedItems)}
-            <PaginationControls pageCount={pageCount} onPageChange={changePage} />
+            {pageCount >= 2 ??
+                <PaginationControls pageCount={pageCount} onPageChange={changePage} />
+            }
         </div>
     );
 };

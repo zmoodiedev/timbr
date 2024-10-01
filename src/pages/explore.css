@@ -1,0 +1,23 @@
+.explore-wrap {
+    display: flex;
+}
+
+.filter-wrap.open {
+    flex: 1;
+    background-color: var(--medium-gray);
+    color: var(--white);
+    padding: 2rem;
+    max-width: 350px;
+}
+
+.filter-wrap.closed {
+    width: 50px;
+    background-color: var(--medium-gray);
+    color: var(--white);
+    padding: 2rem;
+}
+
+.explore-content {
+    flex: 3;
+    padding: 4rem
+}
