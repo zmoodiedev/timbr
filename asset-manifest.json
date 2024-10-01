@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/timbr/static/css/main.44ad0666.css",
-    "main.js": "/timbr/static/js/main.87b6aec1.js",
+    "main.js": "/timbr/static/js/main.11689da3.js",
     "static/media/auth-bg.jpg": "/timbr/static/media/auth-bg.0dc4ff066f0bd62d4aa8.jpg",
     "static/media/marquee-bg2.webp": "/timbr/static/media/marquee-bg2.9a68ce2b55ac5749d321.webp",
     "static/media/hiker.png": "/timbr/static/media/hiker.372da030cb9d28bcf038.png",
@@ -53,10 +53,10 @@
     "static/media/electrical_icon.svg": "/timbr/static/media/electrical_icon.55c1b37ee1bce39abc59c8d6914fc652.svg",
     "index.html": "/timbr/index.html",
     "main.44ad0666.css.map": "/timbr/static/css/main.44ad0666.css.map",
-    "main.87b6aec1.js.map": "/timbr/static/js/main.87b6aec1.js.map"
+    "main.11689da3.js.map": "/timbr/static/js/main.11689da3.js.map"
   },
   "entrypoints": [
     "static/css/main.44ad0666.css",
-    "static/js/main.87b6aec1.js"
+    "static/js/main.11689da3.js"
   ]
 }
